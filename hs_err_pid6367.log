@@ -1,0 +1,1475 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f79f57020dc, pid=6367, tid=140161541179136
+#
+# JRE version: 7.0_21-b02
+# Java VM: OpenJDK 64-Bit Server VM (23.7-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-7/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f79f85ab000):  JavaThread "Thread-11" daemon [_thread_in_native, id=6540, stack(0x00007f79e6cf8000,0x00007f79e6df9000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x0000000000000160
+
+Registers:
+RAX=0x0000000000000001, RBX=0x00007f79e00e1600, RCX=0xffffffffffffff80, RDX=0x0000000000000001
+RSP=0x00007f79e6df6f50, RBP=0x0000000000000000, RSI=0x0000000000000001, RDI=0x0000000000001994
+R8 =0x0000000000000001, R9 =0x0000000000000001, R10=0x00007f79b27aa9d0, R11=0x0000000000000246
+R12=0x0000000000000000, R13=0x00007f79f82ef150, R14=0x00007f79e6df7670, R15=0x0000000000000010
+RIP=0x00007f79f57020dc, EFLAGS=0x0000000000010206, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f79e6df6f50)
+0x00007f79e6df6f50:   00007f79e00e1600 00007f79e0000020
+0x00007f79e6df6f60:   000000000000e16f 0000000000000000
+0x00007f79e6df6f70:   00007f79e00e1600 0000000000010000
+0x00007f79e6df6f80:   00000000000ed000 00007f79e00e1600
+0x00007f79e6df6f90:   000000000000e16f 00007f79f5718492
+0x00007f79e6df6fa0:   fffffffffffffffc 00007f79e6df6fc0
+0x00007f79e6df6fb0:   00007f79e6df6fc0 00007f7a2316ac18
+0x00007f79e6df6fc0:   000000000000000a 00007f79e6df7800
+0x00007f79e6df6fd0:   00007f79e6df70b0 00007f7a2316a580
+0x00007f79e6df6fe0:   00007f79e6df7000 00007f7a657f45e9
+0x00007f79e6df6ff0:   00007f7a24203440 00007f79e6df6f10
+0x00007f79e6df7000:   0000000000000000 00007f79e6df7760
+0x00007f79e6df7010:   00007f7900000001 ffffffff00000000
+0x00007f79e6df7020:   00007f79f5718460 00007f79e6df7800
+0x00007f79e6df7030:   00007f79f82ef0c0 00007f79e6df6f10
+0x00007f79e6df7040:   0000000200000000 0000000000000010
+0x00007f79e6df7050:   00000000ffffffff 0000000000000001
+0x00007f79e6df7060:   0000000000000002 00007f7a65d8b8c3
+0x00007f79e6df7070:   00007f79f85ab000 2b60021b53815900
+0x00007f79e6df7080:   00007f7a662198b0 0000000000000001
+0x00007f79e6df7090:   0000000000000002 0000000000000004
+0x00007f79e6df70a0:   00007f79f5979fcc 0000000000000000
+0x00007f79e6df70b0:   00007f79e6df7650 00007f79f596d1a5
+0x00007f79e6df70c0:   00007f7a60007660 00007f7a6692e580
+0x00007f79e6df70d0:   000000004c35f5d5 00007f79f596cfec
+0x00007f79e6df70e0:   00000000ffffffff 00007f7a657d24a1
+0x00007f79e6df70f0:   0000000000000000 0000000000000000
+0x00007f79e6df7100:   00007f79f8334f60 00007f79f8460618
+0x00007f79e6df7110:   0000000000000000 0000000000000000
+0x00007f79e6df7120:   00000000ffffffff 00007f79f8334fc0
+0x00007f79e6df7130:   00007f79e6df71b0 00007f7a65d8b8c3
+0x00007f79e6df7140:   00007f79f85ab000 00007f79f85ab000 
+
+Instructions: (pc=0x00007f79f57020dc)
+0x00007f79f57020bc:   66 c1 c8 08 c7 43 24 00 00 00 00 66 89 43 22 e8
+0x00007f79f57020cc:   50 e2 ff ff 85 c0 78 2d 48 89 df e8 64 dd ff ff
+0x00007f79f57020dc:   80 bd 60 01 00 00 00 74 15 48 8b 15 a4 1c 24 00
+0x00007f79f57020ec:   48 8d 7b 30 48 89 d9 31 f6 e8 26 cf ff ff 48 83 
+
+Register to memory mapping:
+
+RAX=0x0000000000000001 is an unknown value
+RBX=0x00007f79e00e1600 is an unknown value
+RCX=0xffffffffffffff80 is an unknown value
+RDX=0x0000000000000001 is an unknown value
+RSP=0x00007f79e6df6f50 is pointing into the stack for thread: 0x00007f79f85ab000
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000000000001 is an unknown value
+RDI=0x0000000000001994 is an unknown value
+R8 =0x0000000000000001 is an unknown value
+R9 =0x0000000000000001 is an unknown value
+R10=0x00007f79b27aa9d0 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f79f82ef150 is an unknown value
+R14=0x00007f79e6df7670 is pointing into the stack for thread: 0x00007f79f85ab000
+R15=0x0000000000000010 is an unknown value
+
+
+Stack: [0x00007f79e6cf8000,0x00007f79e6df9000],  sp=0x00007f79e6df6f50,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libscsynth.so+0x220dc]  SC_UdpInPort::SC_UdpInPort(World*, int)+0x9c
+
+[error occurred during error reporting (printing native stack), id 0xb]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  overtone.sc.machinery.server.native.lib_a41c0455_05ed_4a7d_946c_5cf61de7a3e3.World_OpenUDP(Lcom/sun/jna/Pointer;I)I+0
+j  overtone.sc.machinery.server.native$eval5750$fn__5751.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+15
+j  overtone.sc.machinery.server.native$scsynth_listen_udp.invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+55
+j  overtone.sc.machinery.server.connection$internal_booter.invoke(Ljava/lang/Object;)Ljava/lang/Object;+201
+j  overtone.sc.machinery.server.connection$boot_internal_server$fn__5843.invoke()Ljava/lang/Object;+13
+j  clojure.lang.AFn.run()V+1
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x00007f79f85ab000 JavaThread "Thread-11" daemon [_thread_in_native, id=6540, stack(0x00007f79e6cf8000,0x00007f79e6df9000)]
+  0x00007f79f85a7000 JavaThread "Java Sound Event Dispatcher" daemon [_thread_blocked, id=6539, stack(0x00007f79e6df9000,0x00007f79e6efa000)]
+  0x00007f79f82fc800 JavaThread "pool-3-thread-6" [_thread_blocked, id=6526, stack(0x00007f79e75f6000,0x00007f79e76f7000)]
+  0x00007f79f82fc000 JavaThread "pool-3-thread-5" [_thread_blocked, id=6525, stack(0x00007f79e76f7000,0x00007f79e77f8000)]
+  0x00007f79f84fe000 JavaThread "pool-3-thread-4" [_thread_blocked, id=6524, stack(0x00007f79e77f8000,0x00007f79e78f9000)]
+  0x00007f79f82ff800 JavaThread "pool-3-thread-3" [_thread_blocked, id=6523, stack(0x00007f79e78f9000,0x00007f79e79fa000)]
+  0x00007f79f84e0000 JavaThread "pool-3-thread-2" [_thread_blocked, id=6522, stack(0x00007f79e79fa000,0x00007f79e7afb000)]
+  0x00007f79f84df000 JavaThread "pool-3-thread-1" [_thread_blocked, id=6521, stack(0x00007f79e7afb000,0x00007f79e7bfc000)]
+  0x00007f79dc001000 JavaThread "pool-4-thread-6" [_thread_blocked, id=6520, stack(0x00007f79e7bfc000,0x00007f79e7cfd000)]
+  0x00007f79ec004800 JavaThread "pool-4-thread-5" [_thread_blocked, id=6519, stack(0x00007f79e7cfd000,0x00007f79e7dfe000)]
+  0x00007f79e0001000 JavaThread "pool-4-thread-4" [_thread_blocked, id=6518, stack(0x00007f79e7dfe000,0x00007f79e7eff000)]
+  0x00007f79ec003800 JavaThread "pool-4-thread-3" [_thread_blocked, id=6517, stack(0x00007f79e7eff000,0x00007f79e8000000)]
+  0x00007f79ec001800 JavaThread "pool-4-thread-2" [_thread_blocked, id=6516, stack(0x00007f79f40d7000,0x00007f79f41d8000)]
+  0x00007f79f8363800 JavaThread "pool-4-thread-1" [_thread_blocked, id=6515, stack(0x00007f79f41d8000,0x00007f79f42d9000)]
+  0x00007f79f8188800 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=6513, stack(0x00007f79f5b7e000,0x00007f79f5c7f000)]
+  0x00007f79f815a000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=6512, stack(0x00007f79fc0cb000,0x00007f79fc1cc000)]
+  0x00007f7a14008800 JavaThread "nREPL-worker-0" daemon [_thread_blocked, id=6432, stack(0x00007f7a2271e000,0x00007f7a2281f000)]
+  0x00007f7a0c001000 JavaThread "clojure-agent-send-off-pool-6" [_thread_in_native, id=6430, stack(0x00007f7a2281f000,0x00007f7a22920000)]
+  0x00007f7a14003000 JavaThread "clojure-agent-send-off-pool-5" [_thread_in_native, id=6429, stack(0x00007f7a22920000,0x00007f7a22a21000)]
+  0x00007f7a14001000 JavaThread "clojure-agent-send-off-pool-4" [_thread_blocked, id=6428, stack(0x00007f7a22a21000,0x00007f7a22b22000)]
+  0x00007f7a60a18000 JavaThread "clojure-agent-send-off-pool-3" [_thread_blocked, id=6426, stack(0x00007f7a22b22000,0x00007f7a22c23000)]
+  0x00007f7a60a02000 JavaThread "clojure-agent-send-off-pool-2" [_thread_blocked, id=6425, stack(0x00007f7a22c23000,0x00007f7a22d24000)]
+  0x00007f7a60a06000 JavaThread "clojure-agent-send-off-pool-1" [_thread_blocked, id=6422, stack(0x00007f7a22d24000,0x00007f7a22e25000)]
+  0x00007f7a60a05000 JavaThread "clojure-agent-send-off-pool-0" [_thread_blocked, id=6420, stack(0x00007f7a22e25000,0x00007f7a22f26000)]
+  0x00007f7a60114000 JavaThread "Service Thread" daemon [_thread_blocked, id=6385, stack(0x00007f7a48911000,0x00007f7a48a12000)]
+  0x00007f7a60112000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=6384, stack(0x00007f7a48a12000,0x00007f7a48b13000)]
+  0x00007f7a60110000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=6383, stack(0x00007f7a48b13000,0x00007f7a48c14000)]
+  0x00007f7a6010d000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=6382, stack(0x00007f7a48c14000,0x00007f7a48d15000)]
+  0x00007f7a6010b000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6381, stack(0x00007f7a48d15000,0x00007f7a48e16000)]
+  0x00007f7a600b4800 JavaThread "Finalizer" daemon [_thread_blocked, id=6380, stack(0x00007f7a494f7000,0x00007f7a495f8000)]
+  0x00007f7a600b2000 JavaThread "Reference Handler" daemon [_thread_blocked, id=6379, stack(0x00007f7a495f8000,0x00007f7a496f9000)]
+  0x00007f7a6000b800 JavaThread "main" [_thread_blocked, id=6370, stack(0x00007f7a66f78000,0x00007f7a67079000)]
+
+Other Threads:
+  0x00007f7a600aa000 VMThread [stack: 0x00007f7a496f9000,0x00007f7a497fa000] [id=6378]
+  0x00007f7a6011f000 WatcherThread [stack: 0x00007f7a48810000,0x00007f7a48911000] [id=6386]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 307776K, used 264250K [0x00000000eccb0000, 0x00000000fff80000, 0x0000000100000000)
+  eden space 302016K, 86% used [0x00000000eccb0000,0x00000000fcb9a9c0,0x00000000ff3a0000)
+  from space 5760K, 55% used [0x00000000ff9e0000,0x00000000ffd04010,0x00000000fff80000)
+  to   space 6080K, 0% used [0x00000000ff3a0000,0x00000000ff3a0000,0x00000000ff990000)
+ ParOldGen       total 64512K, used 36319K [0x00000000c6600000, 0x00000000ca500000, 0x00000000eccb0000)
+  object space 64512K, 56% used [0x00000000c6600000,0x00000000c8977cd0,0x00000000ca500000)
+ PSPermGen       total 70592K, used 39928K [0x00000000bc000000, 0x00000000c04f0000, 0x00000000c6600000)
+  object space 70592K, 56% used [0x00000000bc000000,0x00000000be6fe290,0x00000000c04f0000)
+
+Card table byte_map: [0x00007f7a59849000,0x00007f7a59a6a000] byte_map_base: 0x00007f7a59269000
+
+Polling page: 0x00007f7a670a0000
+
+Code Cache  [0x00007f7a59bea000, 0x00007f7a5a29a000, 0x00007f7a5fbea000)
+ total_blobs=3144 nmethods=2694 adapters=383 free_code_cache=91520Kb largest_free_block=93713472
+
+Compilation events (10 events):
+Event: 33.513 Thread 0x00007f7a60112000 2715       1       java.lang.reflect.Field::getDeclaringClass (5 bytes)
+Event: 33.513 Thread 0x00007f7a60112000 nmethod 2715 0x00007f7a5a289bd0 code [0x00007f7a5a289d20, 0x00007f7a5a289e70]
+Event: 35.376 Thread 0x00007f7a60112000 2716       1       java.lang.Double::doubleValue (5 bytes)
+Event: 35.377 Thread 0x00007f7a60112000 nmethod 2716 0x00007f7a5a289ed0 code [0x00007f7a5a28a020, 0x00007f7a5a28a170]
+Event: 36.671 Thread 0x00007f7a60112000 2717       1       java.util.concurrent.ThreadPoolExecutor::runStateOf (5 bytes)
+Event: 36.671 Thread 0x00007f7a60112000 nmethod 2717 0x00007f7a5a28a1d0 code [0x00007f7a5a28a320, 0x00007f7a5a28a450]
+Event: 39.834 Thread 0x00007f7a60112000 2718       1       clojure.lang.Numbers$BigIntOps::combine (8 bytes)
+Event: 39.835 Thread 0x00007f7a60112000 nmethod 2718 0x00007f7a5a28a490 code [0x00007f7a5a28a600, 0x00007f7a5a28a768]
+Event: 39.837 Thread 0x00007f7a60112000 2719       1       clojure.lang.Numbers$BigIntOps::lt (12 bytes)
+Event: 39.838 Thread 0x00007f7a60112000 nmethod 2719 0x00007f7a5a28a7d0 code [0x00007f7a5a28a940, 0x00007f7a5a28aae8]
+
+GC Heap History (10 events):
+Event: 26.594 GC heap before
+{Heap before GC invocations=17 (full 0):
+ PSYoungGen      total 308288K, used 306950K [0x00000000eccb0000, 0x00000000fffb0000, 0x0000000100000000)
+  eden space 302720K, 100% used [0x00000000eccb0000,0x00000000ff450000,0x00000000ff450000)
+  from space 5568K, 75% used [0x00000000ffa40000,0x00000000ffe61ab8,0x00000000fffb0000)
+  to   space 5824K, 0% used [0x00000000ff450000,0x00000000ff450000,0x00000000ffa00000)
+ ParOldGen       total 39360K, used 28394K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 72% used [0x00000000c6600000,0x00000000c81babb0,0x00000000c8c70000)
+ PSPermGen       total 32000K, used 31865K [0x00000000bc000000, 0x00000000bdf40000, 0x00000000c6600000)
+  object space 32000K, 99% used [0x00000000bc000000,0x00000000bdf1e4d0,0x00000000bdf40000)
+Event: 26.608 GC heap after
+Heap after GC invocations=17 (full 0):
+ PSYoungGen      total 308544K, used 992K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 302720K, 0% used [0x00000000eccb0000,0x00000000eccb0000,0x00000000ff450000)
+  from space 5824K, 17% used [0x00000000ff450000,0x00000000ff548000,0x00000000ffa00000)
+  to   space 6144K, 0% used [0x00000000ffa00000,0x00000000ffa00000,0x0000000100000000)
+ ParOldGen       total 39360K, used 32140K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 81% used [0x00000000c6600000,0x00000000c8563040,0x00000000c8c70000)
+ PSPermGen       total 32000K, used 31865K [0x00000000bc000000, 0x00000000bdf40000, 0x00000000c6600000)
+  object space 32000K, 99% used [0x00000000bc000000,0x00000000bdf1e4d0,0x00000000bdf40000)
+}
+Event: 27.480 GC heap before
+{Heap before GC invocations=18 (full 0):
+ PSYoungGen      total 308544K, used 303712K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 302720K, 100% used [0x00000000eccb0000,0x00000000ff450000,0x00000000ff450000)
+  from space 5824K, 17% used [0x00000000ff450000,0x00000000ff548000,0x00000000ffa00000)
+  to   space 6144K, 0% used [0x00000000ffa00000,0x00000000ffa00000,0x0000000100000000)
+ ParOldGen       total 39360K, used 32140K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 81% used [0x00000000c6600000,0x00000000c8563040,0x00000000c8c70000)
+ PSPermGen       total 32576K, used 32506K [0x00000000bc000000, 0x00000000bdfd0000, 0x00000000c6600000)
+  object space 32576K, 99% used [0x00000000bc000000,0x00000000bdfbea68,0x00000000bdfd0000)
+Event: 27.493 GC heap after
+Heap after GC invocations=18 (full 0):
+ PSYoungGen      total 308032K, used 5024K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 301888K, 0% used [0x00000000eccb0000,0x00000000eccb0000,0x00000000ff380000)
+  from space 6144K, 81% used [0x00000000ffa00000,0x00000000ffee8000,0x0000000100000000)
+  to   space 6400K, 0% used [0x00000000ff380000,0x00000000ff380000,0x00000000ff9c0000)
+ ParOldGen       total 39360K, used 33031K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 83% used [0x00000000c6600000,0x00000000c8641f10,0x00000000c8c70000)
+ PSPermGen       total 32576K, used 32506K [0x00000000bc000000, 0x00000000bdfd0000, 0x00000000c6600000)
+  object space 32576K, 99% used [0x00000000bc000000,0x00000000bdfbea68,0x00000000bdfd0000)
+}
+Event: 29.419 GC heap before
+{Heap before GC invocations=19 (full 0):
+ PSYoungGen      total 308032K, used 306912K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 301888K, 100% used [0x00000000eccb0000,0x00000000ff380000,0x00000000ff380000)
+  from space 6144K, 81% used [0x00000000ffa00000,0x00000000ffee8000,0x0000000100000000)
+  to   space 6400K, 0% used [0x00000000ff380000,0x00000000ff380000,0x00000000ff9c0000)
+ ParOldGen       total 39360K, used 33031K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 83% used [0x00000000c6600000,0x00000000c8641f10,0x00000000c8c70000)
+ PSPermGen       total 35264K, used 35146K [0x00000000bc000000, 0x00000000be270000, 0x00000000c6600000)
+  object space 35264K, 99% used [0x00000000bc000000,0x00000000be2528c8,0x00000000be270000)
+Event: 29.438 GC heap after
+Heap after GC invocations=19 (full 0):
+ PSYoungGen      total 308288K, used 2768K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 301888K, 0% used [0x00000000eccb0000,0x00000000eccb0000,0x00000000ff380000)
+  from space 6400K, 43% used [0x00000000ff380000,0x00000000ff634010,0x00000000ff9c0000)
+  to   space 6272K, 0% used [0x00000000ff9e0000,0x00000000ff9e0000,0x0000000100000000)
+ ParOldGen       total 39360K, used 37813K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 96% used [0x00000000c6600000,0x00000000c8aed7c0,0x00000000c8c70000)
+ PSPermGen       total 35264K, used 35146K [0x00000000bc000000, 0x00000000be270000, 0x00000000c6600000)
+  object space 35264K, 99% used [0x00000000bc000000,0x00000000be2528c8,0x00000000be270000)
+}
+Event: 29.438 GC heap before
+{Heap before GC invocations=20 (full 1):
+ PSYoungGen      total 308288K, used 2768K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 301888K, 0% used [0x00000000eccb0000,0x00000000eccb0000,0x00000000ff380000)
+  from space 6400K, 43% used [0x00000000ff380000,0x00000000ff634010,0x00000000ff9c0000)
+  to   space 6272K, 0% used [0x00000000ff9e0000,0x00000000ff9e0000,0x0000000100000000)
+ ParOldGen       total 39360K, used 37813K [0x00000000c6600000, 0x00000000c8c70000, 0x00000000eccb0000)
+  object space 39360K, 96% used [0x00000000c6600000,0x00000000c8aed7c0,0x00000000c8c70000)
+ PSPermGen       total 35264K, used 35146K [0x00000000bc000000, 0x00000000be270000, 0x00000000c6600000)
+  object space 35264K, 99% used [0x00000000bc000000,0x00000000be2528c8,0x00000000be270000)
+Event: 29.932 GC heap after
+Heap after GC invocations=20 (full 1):
+ PSYoungGen      total 308288K, used 0K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 301888K, 0% used [0x00000000eccb0000,0x00000000eccb0000,0x00000000ff380000)
+  from space 6400K, 0% used [0x00000000ff380000,0x00000000ff380000,0x00000000ff9c0000)
+  to   space 6272K, 0% used [0x00000000ff9e0000,0x00000000ff9e0000,0x0000000100000000)
+ ParOldGen       total 64512K, used 36311K [0x00000000c6600000, 0x00000000ca500000, 0x00000000eccb0000)
+  object space 64512K, 56% used [0x00000000c6600000,0x00000000c8975cd0,0x00000000ca500000)
+ PSPermGen       total 70592K, used 35126K [0x00000000bc000000, 0x00000000c04f0000, 0x00000000c6600000)
+  object space 70592K, 49% used [0x00000000bc000000,0x00000000be24da48,0x00000000c04f0000)
+}
+Event: 31.180 GC heap before
+{Heap before GC invocations=21 (full 1):
+ PSYoungGen      total 308288K, used 301888K [0x00000000eccb0000, 0x0000000100000000, 0x0000000100000000)
+  eden space 301888K, 100% used [0x00000000eccb0000,0x00000000ff380000,0x00000000ff380000)
+  from space 6400K, 0% used [0x00000000ff380000,0x00000000ff380000,0x00000000ff9c0000)
+  to   space 6272K, 0% used [0x00000000ff9e0000,0x00000000ff9e0000,0x0000000100000000)
+ ParOldGen       total 64512K, used 36311K [0x00000000c6600000, 0x00000000ca500000, 0x00000000eccb0000)
+  object space 64512K, 56% used [0x00000000c6600000,0x00000000c8975cd0,0x00000000ca500000)
+ PSPermGen       total 70592K, used 36889K [0x00000000bc000000, 0x00000000c04f0000, 0x00000000c6600000)
+  object space 70592K, 52% used [0x00000000bc000000,0x00000000be4065a8,0x00000000c04f0000)
+Event: 31.190 GC heap after
+Heap after GC invocations=21 (full 1):
+ PSYoungGen      total 307776K, used 3216K [0x00000000eccb0000, 0x00000000fff80000, 0x0000000100000000)
+  eden space 302016K, 0% used [0x00000000eccb0000,0x00000000eccb0000,0x00000000ff3a0000)
+  from space 5760K, 55% used [0x00000000ff9e0000,0x00000000ffd04010,0x00000000fff80000)
+  to   space 6080K, 0% used [0x00000000ff3a0000,0x00000000ff3a0000,0x00000000ff990000)
+ ParOldGen       total 64512K, used 36319K [0x00000000c6600000, 0x00000000ca500000, 0x00000000eccb0000)
+  object space 64512K, 56% used [0x00000000c6600000,0x00000000c8977cd0,0x00000000ca500000)
+ PSPermGen       total 70592K, used 36889K [0x00000000bc000000, 0x00000000c04f0000, 0x00000000c6600000)
+  object space 70592K, 52% used [0x00000000bc000000,0x00000000be4065a8,0x00000000c04f0000)
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 33.456 Thread 0x00007f7a14008800 Threw 0x00000000fc64c298 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.456 Thread 0x00007f7a14008800 Threw 0x00000000fc64c958 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.473 Thread 0x00007f79f85ab000 Threw 0x00000000fc9993e8 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.475 Thread 0x00007f79f85ab000 Threw 0x00000000fc9a2538 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.492 Thread 0x00007f79f85ab000 Threw 0x00000000fc9aaaf0 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.493 Thread 0x00007f79f85ab000 Threw 0x00000000fc9b14e8 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.505 Thread 0x00007f79f85ab000 Threw 0x00000000fca257a0 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.505 Thread 0x00007f79f85ab000 Threw 0x00000000fca334a8 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.505 Thread 0x00007f79f85ab000 Threw 0x00000000fca343a8 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 33.506 Thread 0x00007f79f85ab000 Threw 0x00000000fca3c1e0 at /build/buildd/openjdk-7-7u21-2.3.9/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+
+Events (10 events):
+Event: 33.504 Executing VM operation: RevokeBias
+Event: 33.504 Executing VM operation: RevokeBias done
+Event: 33.504 Executing VM operation: RevokeBias
+Event: 33.504 Executing VM operation: RevokeBias done
+Event: 33.504 loading class 0x00007f79f8360740
+Event: 33.504 loading class 0x00007f79f8360740 done
+Event: 33.505 loading class 0x00007f79f82bba50
+Event: 33.505 loading class 0x00007f79f82bba50 done
+Event: 33.506 loading class 0x00007f79f82b4190
+Event: 33.506 loading class 0x00007f79f82b4190 done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:05 918229                             /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+00600000-00601000 r--p 00000000 08:05 918229                             /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+00601000-00602000 rw-p 00001000 08:05 918229                             /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+0136f000-01390000 rw-p 00000000 00:00 0                                  [heap]
+bc000000-c04f0000 rw-p 00000000 00:00 0 
+c04f0000-c6600000 rw-p 00000000 00:00 0 
+c6600000-ca500000 rw-p 00000000 00:00 0 
+ca500000-eccb0000 rw-p 00000000 00:00 0 
+eccb0000-fff80000 rw-p 00000000 00:00 0 
+fff80000-100000000 ---p 00000000 00:00 0 
+7f79b1faa000-7f79b1fab000 ---p 00000000 00:00 0 
+7f79b1fab000-7f79b27ab000 rw-p 00000000 00:00 0                          [stack:6548]
+7f79b27ab000-7f79b27ac000 ---p 00000000 00:00 0 
+7f79b27ac000-7f79c2fad000 rw-p 00000000 00:00 0                          [stack:6544]
+7f79c2fad000-7f79c2fb9000 r-xp 00000000 08:05 575626                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FFT_UGens.so
+7f79c2fb9000-7f79c31b9000 ---p 0000c000 08:05 575626                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FFT_UGens.so
+7f79c31b9000-7f79c31ba000 r--p 0000c000 08:05 575626                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FFT_UGens.so
+7f79c31ba000-7f79c31bb000 rw-p 0000d000 08:05 575626                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FFT_UGens.so
+7f79c31bb000-7f79c31eb000 rw-p 00000000 00:00 0 
+7f79c31eb000-7f79c3206000 r-xp 00000000 08:05 575468                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AtkUGens.so
+7f79c3206000-7f79c3406000 ---p 0001b000 08:05 575468                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AtkUGens.so
+7f79c3406000-7f79c3407000 r--p 0001b000 08:05 575468                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AtkUGens.so
+7f79c3407000-7f79c3408000 rw-p 0001c000 08:05 575468                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AtkUGens.so
+7f79c3408000-7f79c340b000 r-xp 00000000 08:05 575503                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MembraneUGens.so
+7f79c340b000-7f79c360a000 ---p 00003000 08:05 575503                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MembraneUGens.so
+7f79c360a000-7f79c360b000 r--p 00002000 08:05 575503                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MembraneUGens.so
+7f79c360b000-7f79c360c000 rw-p 00003000 08:05 575503                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MembraneUGens.so
+7f79c360c000-7f79c360d000 ---p 00000000 00:00 0 
+7f79c360d000-7f79c3e0d000 rw-p 00000000 00:00 0                          [stack:6543]
+7f79c3e0d000-7f79c3e0e000 r-xp 00000000 08:05 575631                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/KeyboardUGens.so
+7f79c3e0e000-7f79c400e000 ---p 00001000 08:05 575631                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/KeyboardUGens.so
+7f79c400e000-7f79c400f000 r--p 00001000 08:05 575631                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/KeyboardUGens.so
+7f79c400f000-7f79c4010000 rw-p 00002000 08:05 575631                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/KeyboardUGens.so
+7f79c4010000-7f79c4013000 r-xp 00000000 08:05 575491                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f79c4013000-7f79c4212000 ---p 00003000 08:05 575491                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f79c4212000-7f79c4213000 r--p 00002000 08:05 575491                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f79c4213000-7f79c4214000 rw-p 00003000 08:05 575491                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDCepstrumUGens.so
+7f79c4214000-7f79c4220000 rw-p 00000000 00:00 0 
+7f79c4220000-7f79c4223000 r-xp 00000000 08:05 575628                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GendynUGens.so
+7f79c4223000-7f79c4422000 ---p 00003000 08:05 575628                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GendynUGens.so
+7f79c4422000-7f79c4423000 r--p 00002000 08:05 575628                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GendynUGens.so
+7f79c4423000-7f79c4424000 rw-p 00003000 08:05 575628                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GendynUGens.so
+7f79c4424000-7f79c442a000 r-xp 00000000 08:05 575479                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobNoise.so
+7f79c442a000-7f79c4629000 ---p 00006000 08:05 575479                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobNoise.so
+7f79c4629000-7f79c462a000 r--p 00005000 08:05 575479                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobNoise.so
+7f79c462a000-7f79c462b000 rw-p 00006000 08:05 575479                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobNoise.so
+7f79c462b000-7f79c4631000 r-xp 00000000 08:05 575637                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NoiseUGens.so
+7f79c4631000-7f79c4830000 ---p 00006000 08:05 575637                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NoiseUGens.so
+7f79c4830000-7f79c4831000 r--p 00005000 08:05 575637                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NoiseUGens.so
+7f79c4831000-7f79c4832000 rw-p 00006000 08:05 575637                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NoiseUGens.so
+7f79c4832000-7f79c4834000 r-xp 00000000 08:05 575493                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f79c4834000-7f79c4a33000 ---p 00002000 08:05 575493                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f79c4a33000-7f79c4a34000 r--p 00001000 08:05 575493                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f79c4a34000-7f79c4a35000 rw-p 00002000 08:05 575493                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDDistortionUGens.so
+7f79c4a35000-7f79c4a41000 r-xp 00000000 08:05 575623                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DemandUGens.so
+7f79c4a41000-7f79c4c41000 ---p 0000c000 08:05 575623                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DemandUGens.so
+7f79c4c41000-7f79c4c42000 r--p 0000c000 08:05 575623                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DemandUGens.so
+7f79c4c42000-7f79c4c43000 rw-p 0000d000 08:05 575623                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DemandUGens.so
+7f79c4c43000-7f79c4c44000 ---p 00000000 00:00 0 
+7f79c4c44000-7f79c5444000 rw-p 00000000 00:00 0                          [stack:6542]
+7f79c5444000-7f79c5447000 r-xp 00000000 08:05 575635                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MouseUGens.so
+7f79c5447000-7f79c5646000 ---p 00003000 08:05 575635                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MouseUGens.so
+7f79c5646000-7f79c5647000 r--p 00002000 08:05 575635                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MouseUGens.so
+7f79c5647000-7f79c5648000 rw-p 00003000 08:05 575635                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MouseUGens.so
+7f79c5648000-7f79c564b000 r-xp 00000000 08:05 575502                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MdaUGens.so
+7f79c564b000-7f79c584a000 ---p 00003000 08:05 575502                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MdaUGens.so
+7f79c584a000-7f79c584b000 r--p 00002000 08:05 575502                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MdaUGens.so
+7f79c584b000-7f79c596a000 rw-p 00003000 08:05 575502                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MdaUGens.so
+7f79c596a000-7f79c596e000 r-xp 00000000 08:05 575469                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AY_UGen.so
+7f79c596e000-7f79c5b6d000 ---p 00004000 08:05 575469                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AY_UGen.so
+7f79c5b6d000-7f79c5b6e000 r--p 00003000 08:05 575469                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AY_UGen.so
+7f79c5b6e000-7f79c5b6f000 rw-p 00004000 08:05 575469                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AY_UGen.so
+7f79c5b6f000-7f79c5b71000 rw-p 00000000 00:00 0 
+7f79c5b71000-7f79c5b73000 r-xp 00000000 08:05 575643                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TestUGens.so
+7f79c5b73000-7f79c5d72000 ---p 00002000 08:05 575643                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TestUGens.so
+7f79c5d72000-7f79c5d73000 r--p 00001000 08:05 575643                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TestUGens.so
+7f79c5d73000-7f79c5d74000 rw-p 00002000 08:05 575643                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TestUGens.so
+7f79c5d74000-7f79c5d75000 ---p 00000000 00:00 0 
+7f79c5d75000-7f79c6575000 rw-p 00000000 00:00 0                          [stack:6541]
+7f79c6575000-7f79c6578000 r-xp 00000000 08:05 575624                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DiskIO_UGens.so
+7f79c6578000-7f79c6778000 ---p 00003000 08:05 575624                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DiskIO_UGens.so
+7f79c6778000-7f79c6779000 r--p 00003000 08:05 575624                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DiskIO_UGens.so
+7f79c6779000-7f79c677a000 rw-p 00004000 08:05 575624                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DiskIO_UGens.so
+7f79c677a000-7f79c677b000 rw-p 00000000 00:00 0 
+7f79c677b000-7f79c677d000 r-xp 00000000 08:05 575498                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDPollUGens.so
+7f79c677d000-7f79c697c000 ---p 00002000 08:05 575498                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDPollUGens.so
+7f79c697c000-7f79c697d000 r--p 00001000 08:05 575498                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDPollUGens.so
+7f79c697d000-7f79c697e000 rw-p 00002000 08:05 575498                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDPollUGens.so
+7f79c697e000-7f79c6980000 r-xp 00000000 08:05 575501                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f79c6980000-7f79c6b7f000 ---p 00002000 08:05 575501                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f79c6b7f000-7f79c6b80000 r--p 00001000 08:05 575501                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f79c6b80000-7f79c6b81000 rw-p 00002000 08:05 575501                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTriggeredStatsUgens.so
+7f79c6b81000-7f79c6b87000 r-xp 00000000 08:05 575472                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BBCut2UGens.so
+7f79c6b87000-7f79c6d86000 ---p 00006000 08:05 575472                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BBCut2UGens.so
+7f79c6d86000-7f79c6d87000 r--p 00005000 08:05 575472                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BBCut2UGens.so
+7f79c6d87000-7f79c6d89000 rw-p 00006000 08:05 575472                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BBCut2UGens.so
+7f79c6d89000-7f79c6d8d000 r-xp 00000000 08:05 575511                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TagSystemUgens.so
+7f79c6d8d000-7f79c6f8c000 ---p 00004000 08:05 575511                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TagSystemUgens.so
+7f79c6f8c000-7f79c6f8d000 r--p 00003000 08:05 575511                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TagSystemUgens.so
+7f79c6f8d000-7f79c6f8e000 rw-p 00004000 08:05 575511                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TagSystemUgens.so
+7f79c6f8e000-7f79c6f91000 r-xp 00000000 08:05 575495                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFilterUGens.so
+7f79c6f91000-7f79c7190000 ---p 00003000 08:05 575495                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFilterUGens.so
+7f79c7190000-7f79c7191000 r--p 00002000 08:05 575495                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFilterUGens.so
+7f79c7191000-7f79c7192000 rw-p 00003000 08:05 575495                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFilterUGens.so
+7f79c7192000-7f79c71a4000 r-xp 00000000 08:05 575632                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LFUGens.so
+7f79c71a4000-7f79c73a4000 ---p 00012000 08:05 575632                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LFUGens.so
+7f79c73a4000-7f79c73a5000 r--p 00012000 08:05 575632                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LFUGens.so
+7f79c73a5000-7f79c73a6000 rw-p 00013000 08:05 575632                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LFUGens.so
+7f79c73a6000-7f79c73ae000 r-xp 00000000 08:05 575513                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VBAP.so
+7f79c73ae000-7f79c75ad000 ---p 00008000 08:05 575513                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VBAP.so
+7f79c75ad000-7f79c75ae000 r--p 00007000 08:05 575513                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VBAP.so
+7f79c75ae000-7f79c75af000 rw-p 00008000 08:05 575513                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VBAP.so
+7f79c75af000-7f79c75dd000 r-xp 00000000 08:05 575622                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DelayUGens.so
+7f79c75dd000-7f79c77dd000 ---p 0002e000 08:05 575622                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DelayUGens.so
+7f79c77dd000-7f79c77de000 r--p 0002e000 08:05 575622                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DelayUGens.so
+7f79c77de000-7f79c77df000 rw-p 0002f000 08:05 575622                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DelayUGens.so
+7f79c77df000-7f79c77e1000 r-xp 00000000 08:05 575640                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f79c77e1000-7f79c79e0000 ---p 00002000 08:05 575640                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f79c79e0000-7f79c79e1000 r--p 00001000 08:05 575640                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f79c79e1000-7f79c79e2000 rw-p 00002000 08:05 575640                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PhysicalModelingUGens.so
+7f79c79e2000-7f79c79e4000 r-xp 00000000 08:05 575470                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatPVUgens.so
+7f79c79e4000-7f79c7be3000 ---p 00002000 08:05 575470                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatPVUgens.so
+7f79c7be3000-7f79c7be4000 r--p 00001000 08:05 575470                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatPVUgens.so
+7f79c7be4000-7f79c7be5000 rw-p 00002000 08:05 575470                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatPVUgens.so
+7f79c7be5000-7f79c7bf1000 rw-p 00000000 00:00 0 
+7f79c7bf1000-7f79c7bfb000 r-xp 00000000 08:05 575634                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ML_UGens.so
+7f79c7bfb000-7f79c7dfa000 ---p 0000a000 08:05 575634                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ML_UGens.so
+7f79c7dfa000-7f79c7dfb000 r--p 00009000 08:05 575634                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ML_UGens.so
+7f79c7dfb000-7f79c7e03000 rw-p 0000a000 08:05 575634                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ML_UGens.so
+7f79c7e03000-7f79c7e3f000 rw-p 00000000 00:00 0 
+7f79c7e3f000-7f79c7e47000 r-xp 00000000 08:05 575512                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TJUGens.so
+7f79c7e47000-7f79c8046000 ---p 00008000 08:05 575512                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TJUGens.so
+7f79c8046000-7f79c8047000 r--p 00007000 08:05 575512                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TJUGens.so
+7f79c8047000-7f79c8048000 rw-p 00008000 08:05 575512                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TJUGens.so
+7f79c8048000-7f79c804b000 r-xp 00000000 08:05 575514                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VOSIM.so
+7f79c804b000-7f79c824a000 ---p 00003000 08:05 575514                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VOSIM.so
+7f79c824a000-7f79c824b000 r--p 00002000 08:05 575514                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VOSIM.so
+7f79c824b000-7f79c824c000 rw-p 00003000 08:05 575514                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/VOSIM.so
+7f79c824c000-7f79c8253000 r-xp 00000000 08:05 575621                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ChaosUGens.so
+7f79c8253000-7f79c8452000 ---p 00007000 08:05 575621                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ChaosUGens.so
+7f79c8452000-7f79c8453000 r--p 00006000 08:05 575621                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ChaosUGens.so
+7f79c8453000-7f79c8454000 rw-p 00007000 08:05 575621                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ChaosUGens.so
+7f79c8454000-7f79c8457000 r-xp 00000000 08:05 575489                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LoopBuf.so
+7f79c8457000-7f79c8656000 ---p 00003000 08:05 575489                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LoopBuf.so
+7f79c8656000-7f79c8657000 r--p 00002000 08:05 575489                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LoopBuf.so
+7f79c8657000-7f79c8658000 rw-p 00003000 08:05 575489                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LoopBuf.so
+7f79c8658000-7f79c865a000 r-xp 00000000 08:05 575496                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f79c865a000-7f79c8859000 ---p 00002000 08:05 575496                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f79c8859000-7f79c885a000 r--p 00001000 08:05 575496                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f79c885a000-7f79c885b000 rw-p 00002000 08:05 575496                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDGetenvUGen.so
+7f79c885b000-7f79c8860000 r-xp 00000000 08:05 575478                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobGrain.so
+7f79c8860000-7f79c8a60000 ---p 00005000 08:05 575478                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobGrain.so
+7f79c8a60000-7f79c8a61000 r--p 00005000 08:05 575478                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobGrain.so
+7f79c8a61000-7f79c8a62000 rw-p 00006000 08:05 575478                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobGrain.so
+7f79c8a62000-7f79c8a6d000 r-xp 00000000 08:05 575475                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobChaos.so
+7f79c8a6d000-7f79c8c6c000 ---p 0000b000 08:05 575475                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobChaos.so
+7f79c8c6c000-7f79c8c6d000 r--p 0000a000 08:05 575475                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobChaos.so
+7f79c8c6d000-7f79c8c6e000 rw-p 0000b000 08:05 575475                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobChaos.so
+7f79c8c6e000-7f79c8c7e000 r-xp 00000000 08:05 575484                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshAmbiUGens.so
+7f79c8c7e000-7f79c8e7d000 ---p 00010000 08:05 575484                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshAmbiUGens.so
+7f79c8e7d000-7f79c8e7e000 r--p 0000f000 08:05 575484                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshAmbiUGens.so
+7f79c8e7e000-7f79c8e7f000 rw-p 00010000 08:05 575484                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshAmbiUGens.so
+7f79c8e7f000-7f79c8e9d000 r-xp 00000000 08:05 575487                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshUGens.so
+7f79c8e9d000-7f79c909d000 ---p 0001e000 08:05 575487                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshUGens.so
+7f79c909d000-7f79c909e000 r--p 0001e000 08:05 575487                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshUGens.so
+7f79c909e000-7f79c909f000 rw-p 0001f000 08:05 575487                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshUGens.so
+7f79c909f000-7f79c90b2000 r-xp 00000000 08:05 575486                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshPVUGens.so
+7f79c90b2000-7f79c92b1000 ---p 00013000 08:05 575486                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshPVUGens.so
+7f79c92b1000-7f79c92b2000 r--p 00012000 08:05 575486                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshPVUGens.so
+7f79c92b2000-7f79c92b3000 rw-p 00013000 08:05 575486                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshPVUGens.so
+7f79c92b3000-7f79c92bf000 rw-p 00000000 00:00 0 
+7f79c92bf000-7f79c92c5000 r-xp 00000000 08:05 575641                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PV_ThirdParty.so
+7f79c92c5000-7f79c94c5000 ---p 00006000 08:05 575641                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PV_ThirdParty.so
+7f79c94c5000-7f79c94c6000 r--p 00006000 08:05 575641                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PV_ThirdParty.so
+7f79c94c6000-7f79c94c7000 rw-p 00007000 08:05 575641                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PV_ThirdParty.so
+7f79c94c7000-7f79c94f7000 rw-p 00000000 00:00 0 
+7f79c94f7000-7f79c94f9000 r-xp 00000000 08:05 575506                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RFWUGens.so
+7f79c94f9000-7f79c96f8000 ---p 00002000 08:05 575506                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RFWUGens.so
+7f79c96f8000-7f79c96f9000 r--p 00001000 08:05 575506                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RFWUGens.so
+7f79c96f9000-7f79c96fa000 rw-p 00002000 08:05 575506                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RFWUGens.so
+7f79c96fa000-7f79c970c000 r-xp 00000000 08:05 575473                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BerlachUGens.so
+7f79c970c000-7f79c990b000 ---p 00012000 08:05 575473                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BerlachUGens.so
+7f79c990b000-7f79c990c000 r--p 00011000 08:05 575473                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BerlachUGens.so
+7f79c990c000-7f79c990d000 rw-p 00012000 08:05 575473                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BerlachUGens.so
+7f79c990d000-7f79c9913000 r-xp 00000000 08:05 575642                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ReverbUGens.so
+7f79c9913000-7f79c9b12000 ---p 00006000 08:05 575642                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ReverbUGens.so
+7f79c9b12000-7f79c9b13000 r--p 00005000 08:05 575642                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ReverbUGens.so
+7f79c9b13000-7f79c9b14000 rw-p 00006000 08:05 575642                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/ReverbUGens.so
+7f79c9b14000-7f79c9b25000 r-xp 00000000 08:05 575638                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/OscUGens.so
+7f79c9b25000-7f79c9d24000 ---p 00011000 08:05 575638                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/OscUGens.so
+7f79c9d24000-7f79c9d25000 r--p 00010000 08:05 575638                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/OscUGens.so
+7f79c9d25000-7f79c9d26000 rw-p 00011000 08:05 575638                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/OscUGens.so
+7f79c9d26000-7f79c9d42000 r-xp 00000000 08:05 575627                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FilterUGens.so
+7f79c9d42000-7f79c9f41000 ---p 0001c000 08:05 575627                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FilterUGens.so
+7f79c9f41000-7f79c9f42000 r--p 0001b000 08:05 575627                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FilterUGens.so
+7f79c9f42000-7f79c9f43000 rw-p 0001c000 08:05 575627                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/FilterUGens.so
+7f79c9f43000-7f79c9f45000 r-xp 00000000 08:05 575646                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnpackFFTUGens.so
+7f79c9f45000-7f79ca144000 ---p 00002000 08:05 575646                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnpackFFTUGens.so
+7f79ca144000-7f79ca145000 r--p 00001000 08:05 575646                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnpackFFTUGens.so
+7f79ca145000-7f79ca146000 rw-p 00002000 08:05 575646                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnpackFFTUGens.so
+7f79ca146000-7f79ca152000 rw-p 00000000 00:00 0 
+7f79ca152000-7f79ca184000 r-xp 00000000 08:05 575620                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BinaryOpUGens.so
+7f79ca184000-7f79ca384000 ---p 00032000 08:05 575620                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BinaryOpUGens.so
+7f79ca384000-7f79ca385000 r--p 00032000 08:05 575620                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BinaryOpUGens.so
+7f79ca385000-7f79ca386000 rw-p 00033000 08:05 575620                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BinaryOpUGens.so
+7f79ca386000-7f79ca388000 r-xp 00000000 08:05 575497                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDOscUGens.so
+7f79ca388000-7f79ca587000 ---p 00002000 08:05 575497                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDOscUGens.so
+7f79ca587000-7f79ca588000 r--p 00001000 08:05 575497                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDOscUGens.so
+7f79ca588000-7f79ca589000 rw-p 00002000 08:05 575497                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDOscUGens.so
+7f79ca589000-7f79ca59f000 r-xp 00000000 08:05 575477                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFilt.so
+7f79ca59f000-7f79ca79e000 ---p 00016000 08:05 575477                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFilt.so
+7f79ca79e000-7f79ca79f000 r--p 00015000 08:05 575477                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFilt.so
+7f79ca79f000-7f79ca7a0000 rw-p 00016000 08:05 575477                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFilt.so
+7f79ca7a0000-7f79ca7a4000 r-xp 00000000 08:05 575471                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatUGens.so
+7f79ca7a4000-7f79ca9a3000 ---p 00004000 08:05 575471                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatUGens.so
+7f79ca9a3000-7f79ca9a4000 r--p 00003000 08:05 575471                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatUGens.so
+7f79ca9a4000-7f79ca9a5000 rw-p 00004000 08:05 575471                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BatUGens.so
+7f79ca9a5000-7f79ca9aa000 r-xp 00000000 08:05 575492                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDChaosUGens.so
+7f79ca9aa000-7f79caba9000 ---p 00005000 08:05 575492                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDChaosUGens.so
+7f79caba9000-7f79cabaa000 r--p 00004000 08:05 575492                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDChaosUGens.so
+7f79cabaa000-7f79cabab000 rw-p 00005000 08:05 575492                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDChaosUGens.so
+7f79cabab000-7f79cabaf000 r-xp 00000000 08:05 575467                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AmbisonicUGens.so
+7f79cabaf000-7f79cadaf000 ---p 00004000 08:05 575467                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AmbisonicUGens.so
+7f79cadaf000-7f79cadb0000 r--p 00004000 08:05 575467                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AmbisonicUGens.so
+7f79cadb0000-7f79cadb1000 rw-p 00005000 08:05 575467                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/AmbisonicUGens.so
+7f79cadb1000-7f79cadb4000 r-xp 00000000 08:05 575480                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BlackrainUGens.so
+7f79cadb4000-7f79cafb4000 ---p 00003000 08:05 575480                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BlackrainUGens.so
+7f79cafb4000-7f79cafb5000 r--p 00003000 08:05 575480                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BlackrainUGens.so
+7f79cafb5000-7f79cafb6000 rw-p 00004000 08:05 575480                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BlackrainUGens.so
+7f79cafb6000-7f79cafbb000 r-xp 00000000 08:05 575481                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/Concat.so
+7f79cafbb000-7f79cb1ba000 ---p 00005000 08:05 575481                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/Concat.so
+7f79cb1ba000-7f79cb1bb000 r--p 00004000 08:05 575481                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/Concat.so
+7f79cb1bb000-7f79cb1bc000 rw-p 00005000 08:05 575481                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/Concat.so
+7f79cb1bc000-7f79cb1be000 r-xp 00000000 08:05 575488                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LadspaUGen.so
+7f79cb1be000-7f79cb3be000 ---p 00002000 08:05 575488                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LadspaUGen.so
+7f79cb3be000-7f79cb3bf000 r--p 00002000 08:05 575488                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LadspaUGen.so
+7f79cb3bf000-7f79cb3c0000 rw-p 00003000 08:05 575488                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/LadspaUGen.so
+7f79cb3c0000-7f79cb3d8000 r-xp 00000000 08:05 575629                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GrainUGens.so
+7f79cb3d8000-7f79cb5d7000 ---p 00018000 08:05 575629                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GrainUGens.so
+7f79cb5d7000-7f79cb5d8000 r--p 00017000 08:05 575629                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GrainUGens.so
+7f79cb5d8000-7f79cb5d9000 rw-p 00018000 08:05 575629                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GrainUGens.so
+7f79cb5d9000-7f79cb5de000 r-xp 00000000 08:05 575476                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFFT.so
+7f79cb5de000-7f79cb7dd000 ---p 00005000 08:05 575476                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFFT.so
+7f79cb7dd000-7f79cb7de000 r--p 00004000 08:05 575476                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFFT.so
+7f79cb7de000-7f79cb7df000 rw-p 00005000 08:05 575476                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BhobFFT.so
+7f79cb7df000-7f79cb7eb000 rw-p 00000000 00:00 0 
+7f79cb7eb000-7f79cb7ee000 r-xp 00000000 08:05 575500                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTreeUGens.so
+7f79cb7ee000-7f79cb9ed000 ---p 00003000 08:05 575500                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTreeUGens.so
+7f79cb9ed000-7f79cb9ee000 r--p 00002000 08:05 575500                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTreeUGens.so
+7f79cb9ee000-7f79cb9ef000 rw-p 00003000 08:05 575500                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDTreeUGens.so
+7f79cb9ef000-7f79cb9f2000 r-xp 00000000 08:05 575510                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SummerUGens.so
+7f79cb9f2000-7f79cbbf2000 ---p 00003000 08:05 575510                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SummerUGens.so
+7f79cbbf2000-7f79cbbf3000 r--p 00003000 08:05 575510                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SummerUGens.so
+7f79cbbf3000-7f79cbbf4000 rw-p 00004000 08:05 575510                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SummerUGens.so
+7f79cbbf4000-7f79cbbfa000 r-xp 00000000 08:05 575630                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/IOUGens.so
+7f79cbbfa000-7f79cbdfa000 ---p 00006000 08:05 575630                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/IOUGens.so
+7f79cbdfa000-7f79cbdfb000 r--p 00006000 08:05 575630                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/IOUGens.so
+7f79cbdfb000-7f79cbdfc000 rw-p 00007000 08:05 575630                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/IOUGens.so
+7f79cbdfc000-7f79cbdff000 r-xp 00000000 08:05 575625                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DynNoiseUGens.so
+7f79cbdff000-7f79cbffe000 ---p 00003000 08:05 575625                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DynNoiseUGens.so
+7f79cbffe000-7f79cbfff000 r--p 00002000 08:05 575625                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DynNoiseUGens.so
+7f79cbfff000-7f79cc000000 rw-p 00003000 08:05 575625                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DynNoiseUGens.so
+7f79cc000000-7f79cc021000 rw-p 00000000 00:00 0 
+7f79cc021000-7f79d0000000 ---p 00000000 00:00 0 
+7f79d0000000-7f79d0021000 rw-p 00000000 00:00 0 
+7f79d0021000-7f79d4000000 ---p 00000000 00:00 0 
+7f79d4000000-7f79d4021000 rw-p 00000000 00:00 0 
+7f79d4021000-7f79d8000000 ---p 00000000 00:00 0 
+7f79d8000000-7f79d8021000 rw-p 00000000 00:00 0 
+7f79d8021000-7f79dc000000 ---p 00000000 00:00 0 
+7f79dc000000-7f79dc021000 rw-p 00000000 00:00 0 
+7f79dc021000-7f79e0000000 ---p 00000000 00:00 0 
+7f79e0000000-7f79e00f2000 rw-p 00000000 00:00 0 
+7f79e00f2000-7f79e4000000 ---p 00000000 00:00 0 
+7f79e404e000-7f79e4058000 r-xp 00000000 08:05 575494                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFFTUGens.so
+7f79e4058000-7f79e4257000 ---p 0000a000 08:05 575494                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFFTUGens.so
+7f79e4257000-7f79e4258000 r--p 00009000 08:05 575494                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFFTUGens.so
+7f79e4258000-7f79e4259000 rw-p 0000a000 08:05 575494                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDFFTUGens.so
+7f79e4259000-7f79e4265000 rw-p 00000000 00:00 0 
+7f79e4265000-7f79e4269000 r-xp 00000000 08:05 575499                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDSOMUGens.so
+7f79e4269000-7f79e4468000 ---p 00004000 08:05 575499                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDSOMUGens.so
+7f79e4468000-7f79e4469000 r--p 00003000 08:05 575499                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDSOMUGens.so
+7f79e4469000-7f79e446a000 rw-p 00004000 08:05 575499                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDSOMUGens.so
+7f79e446a000-7f79e4477000 r-xp 00000000 08:05 575504                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NCAnalysisUGens.so
+7f79e4477000-7f79e4676000 ---p 0000d000 08:05 575504                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NCAnalysisUGens.so
+7f79e4676000-7f79e4677000 r--p 0000c000 08:05 575504                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NCAnalysisUGens.so
+7f79e4677000-7f79e4678000 rw-p 0000d000 08:05 575504                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/NCAnalysisUGens.so
+7f79e4678000-7f79e46c3000 rw-p 00000000 00:00 0 
+7f79e46c3000-7f79e46c6000 r-xp 00000000 08:05 575483                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GlitchUGens.so
+7f79e46c6000-7f79e48c5000 ---p 00003000 08:05 575483                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GlitchUGens.so
+7f79e48c5000-7f79e48c6000 r--p 00002000 08:05 575483                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GlitchUGens.so
+7f79e48c6000-7f79e48c7000 rw-p 00003000 08:05 575483                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/GlitchUGens.so
+7f79e48c7000-7f79e4901000 r-xp 00000000 08:05 575485                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshGrainUGens.so
+7f79e4901000-7f79e4b00000 ---p 0003a000 08:05 575485                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshGrainUGens.so
+7f79e4b00000-7f79e4b01000 r--p 00039000 08:05 575485                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshGrainUGens.so
+7f79e4b01000-7f79e4b02000 rw-p 0003a000 08:05 575485                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/JoshGrainUGens.so
+7f79e4b02000-7f79e4b05000 r-xp 00000000 08:05 575482                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DistortionUGens.so
+7f79e4b05000-7f79e4d04000 ---p 00003000 08:05 575482                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DistortionUGens.so
+7f79e4d04000-7f79e4d05000 r--p 00002000 08:05 575482                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DistortionUGens.so
+7f79e4d05000-7f79e4d06000 rw-p 00003000 08:05 575482                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/DistortionUGens.so
+7f79e4d06000-7f79e4d14000 r-xp 00000000 08:05 575508                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SLUGens.so
+7f79e4d14000-7f79e4f13000 ---p 0000e000 08:05 575508                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SLUGens.so
+7f79e4f13000-7f79e4f14000 r--p 0000d000 08:05 575508                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SLUGens.so
+7f79e4f14000-7f79e4f15000 rw-p 0000e000 08:05 575508                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/SLUGens.so
+7f79e4f15000-7f79e4f19000 r-xp 00000000 08:05 575490                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDBufferUGens.so
+7f79e4f19000-7f79e5118000 ---p 00004000 08:05 575490                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDBufferUGens.so
+7f79e5118000-7f79e5119000 r--p 00003000 08:05 575490                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDBufferUGens.so
+7f79e5119000-7f79e511a000 rw-p 00004000 08:05 575490                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MCLDBufferUGens.so
+7f79e511a000-7f79e5120000 r-xp 00000000 08:05 575636                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MulAddUGens.so
+7f79e5120000-7f79e531f000 ---p 00006000 08:05 575636                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MulAddUGens.so
+7f79e531f000-7f79e5320000 r--p 00005000 08:05 575636                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MulAddUGens.so
+7f79e5320000-7f79e5321000 rw-p 00006000 08:05 575636                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/MulAddUGens.so
+7f79e5321000-7f79e5328000 r-xp 00000000 08:05 575474                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BetablockerUGens.so
+7f79e5328000-7f79e5527000 ---p 00007000 08:05 575474                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BetablockerUGens.so
+7f79e5527000-7f79e5528000 r--p 00006000 08:05 575474                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BetablockerUGens.so
+7f79e5528000-7f79e5529000 rw-p 00007000 08:05 575474                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/BetablockerUGens.so
+7f79e5529000-7f79e553c000 r-xp 00000000 08:05 575645                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnaryOpUGens.so
+7f79e553c000-7f79e573c000 ---p 00013000 08:05 575645                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnaryOpUGens.so
+7f79e573c000-7f79e573d000 r--p 00013000 08:05 575645                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnaryOpUGens.so
+7f79e573d000-7f79e573e000 rw-p 00014000 08:05 575645                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/UnaryOpUGens.so
+7f79e573e000-7f79e574a000 r-xp 00000000 08:05 575505                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PitchDetection.so
+7f79e574a000-7f79e5949000 ---p 0000c000 08:05 575505                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PitchDetection.so
+7f79e5949000-7f79e594a000 r--p 0000b000 08:05 575505                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PitchDetection.so
+7f79e594a000-7f79e594b000 rw-p 0000c000 08:05 575505                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PitchDetection.so
+7f79e594b000-7f79e5953000 r-xp 00000000 08:05 575507                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RMEQSuite.so
+7f79e5953000-7f79e5b52000 ---p 00008000 08:05 575507                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RMEQSuite.so
+7f79e5b52000-7f79e5b53000 r--p 00007000 08:05 575507                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RMEQSuite.so
+7f79e5b53000-7f79e5b54000 rw-p 00008000 08:05 575507                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/RMEQSuite.so
+7f79e5b54000-7f79e5b5c000 r-xp 00000000 08:05 575639                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PanUGens.so
+7f79e5b5c000-7f79e5d5b000 ---p 00008000 08:05 575639                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PanUGens.so
+7f79e5d5b000-7f79e5d5c000 r--p 00007000 08:05 575639                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PanUGens.so
+7f79e5d5c000-7f79e5d5d000 rw-p 00008000 08:05 575639                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/PanUGens.so
+7f79e5d5d000-7f79e5d69000 r-xp 00000000 08:05 575644                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TriggerUGens.so
+7f79e5d69000-7f79e5f68000 ---p 0000c000 08:05 575644                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TriggerUGens.so
+7f79e5f68000-7f79e5f69000 r--p 0000b000 08:05 575644                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TriggerUGens.so
+7f79e5f69000-7f79e5f6a000 rw-p 0000c000 08:05 575644                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/TriggerUGens.so
+7f79e5f6a000-7f79e602c000 r-xp 00000000 08:05 575509                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/StkUGens.so
+7f79e602c000-7f79e622b000 ---p 000c2000 08:05 575509                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/StkUGens.so
+7f79e622b000-7f79e622f000 r--p 000c1000 08:05 575509                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/StkUGens.so
+7f79e622f000-7f79e6234000 rw-p 000c5000 08:05 575509                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/StkUGens.so
+7f79e6234000-7f79e6239000 r-xp 00000000 08:05 661026                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f79e6239000-7f79e6438000 ---p 00005000 08:05 661026                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f79e6438000-7f79e6439000 r--p 00004000 08:05 661026                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f79e6439000-7f79e643a000 rw-p 00005000 08:05 661026                     /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+7f79e643a000-7f79e6442000 r-xp 00000000 08:05 658452                     /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f79e6442000-7f79e6642000 ---p 00008000 08:05 658452                     /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f79e6642000-7f79e6643000 r--p 00008000 08:05 658452                     /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f79e6643000-7f79e6644000 rw-p 00009000 08:05 658452                     /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+7f79e6644000-7f79e66a6000 r-xp 00000000 08:05 663509                     /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-3.0.so
+7f79e66a6000-7f79e68a5000 ---p 00062000 08:05 663509                     /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-3.0.so
+7f79e68a5000-7f79e68a6000 r--p 00061000 08:05 663509                     /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-3.0.so
+7f79e68a6000-7f79e68a7000 rw-p 00062000 08:05 663509                     /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-3.0.so
+7f79e68a7000-7f79e68af000 r-xp 00000000 08:05 658342                     /lib/x86_64-linux-gnu/libjson.so.0.1.0
+7f79e68af000-7f79e6aae000 ---p 00008000 08:05 658342                     /lib/x86_64-linux-gnu/libjson.so.0.1.0
+7f79e6aae000-7f79e6aaf000 r--p 00007000 08:05 658342                     /lib/x86_64-linux-gnu/libjson.so.0.1.0
+7f79e6aaf000-7f79e6ab0000 rw-p 00008000 08:05 658342                     /lib/x86_64-linux-gnu/libjson.so.0.1.0
+7f79e6ab0000-7f79e6af7000 r-xp 00000000 08:05 661753                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.15.3
+7f79e6af7000-7f79e6cf6000 ---p 00047000 08:05 661753                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.15.3
+7f79e6cf6000-7f79e6cf7000 r--p 00046000 08:05 661753                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.15.3
+7f79e6cf7000-7f79e6cf8000 rw-p 00047000 08:05 661753                     /usr/lib/x86_64-linux-gnu/libpulse.so.0.15.3
+7f79e6cf8000-7f79e6cfb000 ---p 00000000 00:00 0 
+7f79e6cfb000-7f79e6df9000 rw-p 00000000 00:00 0                          [stack:6540]
+7f79e6df9000-7f79e6dfc000 ---p 00000000 00:00 0 
+7f79e6dfc000-7f79e6efa000 rw-p 00000000 00:00 0                          [stack:6539]
+7f79e6efa000-7f79e6fde000 r-xp 00000000 08:05 665450                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f79e6fde000-7f79e71dd000 ---p 000e4000 08:05 665450                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f79e71dd000-7f79e71e3000 r--p 000e3000 08:05 665450                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f79e71e3000-7f79e71e4000 rw-p 000e9000 08:05 665450                     /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+7f79e71e4000-7f79e71f3000 r-xp 00000000 08:05 918302                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsoundalsa.so
+7f79e71f3000-7f79e73f2000 ---p 0000f000 08:05 918302                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsoundalsa.so
+7f79e73f2000-7f79e73f3000 r--p 0000e000 08:05 918302                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsoundalsa.so
+7f79e73f3000-7f79e73f4000 rw-p 0000f000 08:05 918302                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsoundalsa.so
+7f79e73f4000-7f79e73f5000 r-xp 00000000 08:05 918301                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsound.so
+7f79e73f5000-7f79e75f4000 ---p 00001000 08:05 918301                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsound.so
+7f79e75f4000-7f79e75f5000 r--p 00000000 08:05 918301                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsound.so
+7f79e75f5000-7f79e75f6000 rw-p 00001000 08:05 918301                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjsound.so
+7f79e75f6000-7f79e75f9000 ---p 00000000 00:00 0 
+7f79e75f9000-7f79e76f7000 rw-p 00000000 00:00 0                          [stack:6526]
+7f79e76f7000-7f79e76fa000 ---p 00000000 00:00 0 
+7f79e76fa000-7f79e77f8000 rw-p 00000000 00:00 0                          [stack:6525]
+7f79e77f8000-7f79e77fb000 ---p 00000000 00:00 0 
+7f79e77fb000-7f79e78f9000 rw-p 00000000 00:00 0                          [stack:6524]
+7f79e78f9000-7f79e78fc000 ---p 00000000 00:00 0 
+7f79e78fc000-7f79e79fa000 rw-p 00000000 00:00 0                          [stack:6523]
+7f79e79fa000-7f79e79fd000 ---p 00000000 00:00 0 
+7f79e79fd000-7f79e7afb000 rw-p 00000000 00:00 0                          [stack:6522]
+7f79e7afb000-7f79e7afe000 ---p 00000000 00:00 0 
+7f79e7afe000-7f79e7bfc000 rw-p 00000000 00:00 0                          [stack:6521]
+7f79e7bfc000-7f79e7bff000 ---p 00000000 00:00 0 
+7f79e7bff000-7f79e7cfd000 rw-p 00000000 00:00 0                          [stack:6520]
+7f79e7cfd000-7f79e7d00000 ---p 00000000 00:00 0 
+7f79e7d00000-7f79e7dfe000 rw-p 00000000 00:00 0                          [stack:6519]
+7f79e7dfe000-7f79e7e01000 ---p 00000000 00:00 0 
+7f79e7e01000-7f79e7eff000 rw-p 00000000 00:00 0                          [stack:6518]
+7f79e7eff000-7f79e7f02000 ---p 00000000 00:00 0 
+7f79e7f02000-7f79e8000000 rw-p 00000000 00:00 0                          [stack:6517]
+7f79e8000000-7f79e8021000 rw-p 00000000 00:00 0 
+7f79e8021000-7f79ec000000 ---p 00000000 00:00 0 
+7f79ec000000-7f79ec021000 rw-p 00000000 00:00 0 
+7f79ec021000-7f79f0000000 ---p 00000000 00:00 0 
+7f79f0000000-7f79f0021000 rw-p 00000000 00:00 0 
+7f79f0021000-7f79f4000000 ---p 00000000 00:00 0 
+7f79f40d7000-7f79f40da000 ---p 00000000 00:00 0 
+7f79f40da000-7f79f41d8000 rw-p 00000000 00:00 0                          [stack:6516]
+7f79f41d8000-7f79f41db000 ---p 00000000 00:00 0 
+7f79f41db000-7f79f42d9000 rw-p 00000000 00:00 0                          [stack:6515]
+7f79f42d9000-7f79f42df000 r-xp 00000000 08:05 661676                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.0
+7f79f42df000-7f79f44de000 ---p 00006000 08:05 661676                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.0
+7f79f44de000-7f79f44df000 r--p 00005000 08:05 661676                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.0
+7f79f44df000-7f79f44e0000 rw-p 00006000 08:05 661676                     /usr/lib/x86_64-linux-gnu/libogg.so.0.8.0
+7f79f44e0000-7f79f450b000 r-xp 00000000 08:05 661931                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7f79f450b000-7f79f470b000 ---p 0002b000 08:05 661931                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7f79f470b000-7f79f470c000 r--p 0002b000 08:05 661931                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7f79f470c000-7f79f470d000 rw-p 0002c000 08:05 661931                     /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7f79f470d000-7f79f49c0000 r-xp 00000000 08:05 661933                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.8
+7f79f49c0000-7f79f4bbf000 ---p 002b3000 08:05 661933                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.8
+7f79f4bbf000-7f79f4bdb000 r--p 002b2000 08:05 661933                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.8
+7f79f4bdb000-7f79f4bdc000 rw-p 002ce000 08:05 661933                     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.8
+7f79f4bdc000-7f79f4c26000 r-xp 00000000 08:05 660838                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.2.0
+7f79f4c26000-7f79f4e26000 ---p 0004a000 08:05 660838                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.2.0
+7f79f4e26000-7f79f4e27000 r--p 0004a000 08:05 660838                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.2.0
+7f79f4e27000-7f79f4e28000 rw-p 0004b000 08:05 660838                     /usr/lib/x86_64-linux-gnu/libFLAC.so.8.2.0
+7f79f4e28000-7f79f500f000 r-xp 00000000 08:05 661241                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.3.2
+7f79f500f000-7f79f520f000 ---p 001e7000 08:05 661241                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.3.2
+7f79f520f000-7f79f5220000 r--p 001e7000 08:05 661241                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.3.2
+7f79f5220000-7f79f5221000 rw-p 001f8000 08:05 661241                     /usr/lib/x86_64-linux-gnu/libfftw3f.so.3.3.2
+7f79f5221000-7f79f5276000 r-xp 00000000 08:05 661559                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f79f5276000-7f79f5475000 ---p 00055000 08:05 661559                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f79f5475000-7f79f5478000 r--p 00054000 08:05 661559                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f79f5478000-7f79f5479000 rw-p 00057000 08:05 661559                     /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+7f79f5479000-7f79f547a000 rw-p 00000000 00:00 0 
+7f79f547a000-7f79f54d9000 r-xp 00000000 08:05 661822                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f79f54d9000-7f79f56d9000 ---p 0005f000 08:05 661822                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f79f56d9000-7f79f56db000 r--p 0005f000 08:05 661822                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f79f56db000-7f79f56dc000 rw-p 00061000 08:05 661822                     /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+7f79f56dc000-7f79f56e0000 rw-p 00000000 00:00 0 
+7f79f56e0000-7f79f5742000 r-xp 00000000 08:05 575577                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/libscsynth.so
+7f79f5742000-7f79f5942000 ---p 00062000 08:05 575577                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/libscsynth.so
+7f79f5942000-7f79f5944000 r--p 00062000 08:05 575577                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/libscsynth.so
+7f79f5944000-7f79f5946000 rw-p 00064000 08:05 575577                     /home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64/libscsynth.so
+7f79f5946000-7f79f5966000 rw-p 00000000 00:00 0 
+7f79f5966000-7f79f597d000 r-xp 00000000 08:05 1202119                    /tmp/jna/jna912516705617611983.tmp (deleted)
+7f79f597d000-7f79f5b7c000 ---p 00017000 08:05 1202119                    /tmp/jna/jna912516705617611983.tmp (deleted)
+7f79f5b7c000-7f79f5b7d000 r--p 00016000 08:05 1202119                    /tmp/jna/jna912516705617611983.tmp (deleted)
+7f79f5b7d000-7f79f5b7e000 rw-p 00017000 08:05 1202119                    /tmp/jna/jna912516705617611983.tmp (deleted)
+7f79f5b7e000-7f79f5b81000 ---p 00000000 00:00 0 
+7f79f5b81000-7f79f5c7f000 rw-p 00000000 00:00 0                          [stack:6513]
+7f79f5c7f000-7f79f6dee000 r-xp 00000000 08:05 661526                     /usr/lib/x86_64-linux-gnu/libicudata.so.48.1.1
+7f79f6dee000-7f79f6fed000 ---p 0116f000 08:05 661526                     /usr/lib/x86_64-linux-gnu/libicudata.so.48.1.1
+7f79f6fed000-7f79f6fee000 r--p 0116e000 08:05 661526                     /usr/lib/x86_64-linux-gnu/libicudata.so.48.1.1
+7f79f6fee000-7f79f6fef000 rw-p 0116f000 08:05 661526                     /usr/lib/x86_64-linux-gnu/libicudata.so.48.1.1
+7f79f6fef000-7f79f6ff2000 r-xp 00000000 08:05 658333                     /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f79f6ff2000-7f79f71f1000 ---p 00003000 08:05 658333                     /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f79f71f1000-7f79f71f2000 r--p 00002000 08:05 658333                     /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f79f71f2000-7f79f71f3000 rw-p 00003000 08:05 658333                     /lib/x86_64-linux-gnu/libgpg-error.so.0.8.0
+7f79f71f3000-7f79f71f5000 r-xp 00000000 08:05 658344                     /lib/x86_64-linux-gnu/libkeyutils.so.1.4
+7f79f71f5000-7f79f73f5000 ---p 00002000 08:05 658344                     /lib/x86_64-linux-gnu/libkeyutils.so.1.4
+7f79f73f5000-7f79f73f6000 r--p 00002000 08:05 658344                     /lib/x86_64-linux-gnu/libkeyutils.so.1.4
+7f79f73f6000-7f79f73f7000 rw-p 00003000 08:05 658344                     /lib/x86_64-linux-gnu/libkeyutils.so.1.4
+7f79f73f7000-7f79f754d000 r-xp 00000000 08:05 661540                     /usr/lib/x86_64-linux-gnu/libicuuc.so.48.1.1
+7f79f754d000-7f79f774c000 ---p 00156000 08:05 661540                     /usr/lib/x86_64-linux-gnu/libicuuc.so.48.1.1
+7f79f774c000-7f79f775d000 r--p 00155000 08:05 661540                     /usr/lib/x86_64-linux-gnu/libicuuc.so.48.1.1
+7f79f775d000-7f79f775e000 rw-p 00166000 08:05 661540                     /usr/lib/x86_64-linux-gnu/libicuuc.so.48.1.1
+7f79f775e000-7f79f7762000 rw-p 00000000 00:00 0 
+7f79f7762000-7f79f7794000 r-xp 00000000 08:05 661532                     /usr/lib/x86_64-linux-gnu/libicule.so.48.1.1
+7f79f7794000-7f79f7994000 ---p 00032000 08:05 661532                     /usr/lib/x86_64-linux-gnu/libicule.so.48.1.1
+7f79f7994000-7f79f7996000 r--p 00032000 08:05 661532                     /usr/lib/x86_64-linux-gnu/libicule.so.48.1.1
+7f79f7996000-7f79f7997000 rw-p 00034000 08:05 661532                     /usr/lib/x86_64-linux-gnu/libicule.so.48.1.1
+7f79f7997000-7f79f79da000 r-xp 00000000 08:05 665370                     /lib/x86_64-linux-gnu/libdbus-1.so.3.7.2
+7f79f79da000-7f79f7bd9000 ---p 00043000 08:05 665370                     /lib/x86_64-linux-gnu/libdbus-1.so.3.7.2
+7f79f7bd9000-7f79f7bda000 r--p 00042000 08:05 665370                     /lib/x86_64-linux-gnu/libdbus-1.so.3.7.2
+7f79f7bda000-7f79f7bdb000 rw-p 00043000 08:05 665370                     /lib/x86_64-linux-gnu/libdbus-1.so.3.7.2
+7f79f7bdb000-7f79f7bed000 r-xp 00000000 08:05 661692                     /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.0.0
+7f79f7bed000-7f79f7ded000 ---p 00012000 08:05 661692                     /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.0.0
+7f79f7ded000-7f79f7dee000 r--p 00012000 08:05 661692                     /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.0.0
+7f79f7dee000-7f79f7def000 rw-p 00013000 08:05 661692                     /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.0.0
+7f79f7def000-7f79f7dfe000 r-xp 00000000 08:05 661862                     /usr/lib/x86_64-linux-gnu/libtasn1.so.3.2.0
+7f79f7dfe000-7f79f7ffe000 ---p 0000f000 08:05 661862                     /usr/lib/x86_64-linux-gnu/libtasn1.so.3.2.0
+7f79f7ffe000-7f79f7fff000 r--p 0000f000 08:05 661862                     /usr/lib/x86_64-linux-gnu/libtasn1.so.3.2.0
+7f79f7fff000-7f79f8000000 rw-p 00010000 08:05 661862                     /usr/lib/x86_64-linux-gnu/libtasn1.so.3.2.0
+7f79f8000000-7f79f86a5000 rw-p 00000000 00:00 0 
+7f79f86a5000-7f79fc000000 ---p 00000000 00:00 0 
+7f79fc04a000-7f79fc04b000 ---p 00000000 00:00 0 
+7f79fc04b000-7f79fc0cb000 rw-p 00000000 00:00 0 
+7f79fc0cb000-7f79fc0ce000 ---p 00000000 00:00 0 
+7f79fc0ce000-7f79fc1cc000 rw-p 00000000 00:00 0                          [stack:6512]
+7f79fc1cc000-7f79fc246000 r-xp 00000000 08:05 665407                     /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f79fc246000-7f79fc446000 ---p 0007a000 08:05 665407                     /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f79fc446000-7f79fc447000 r--p 0007a000 08:05 665407                     /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f79fc447000-7f79fc44a000 rw-p 0007b000 08:05 665407                     /lib/x86_64-linux-gnu/libgcrypt.so.11.7.0
+7f79fc44a000-7f79fc451000 r-xp 00000000 08:05 661577                     /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f79fc451000-7f79fc650000 ---p 00007000 08:05 661577                     /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f79fc650000-7f79fc651000 r--p 00006000 08:05 661577                     /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f79fc651000-7f79fc652000 rw-p 00007000 08:05 661577                     /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+7f79fc652000-7f79fc655000 r-xp 00000000 08:05 658309                     /lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f79fc655000-7f79fc854000 ---p 00003000 08:05 658309                     /lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f79fc854000-7f79fc855000 r--p 00002000 08:05 658309                     /lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f79fc855000-7f79fc856000 rw-p 00003000 08:05 658309                     /lib/x86_64-linux-gnu/libcom_err.so.2.1
+7f79fc856000-7f79fc87c000 r-xp 00000000 08:05 661571                     /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f79fc87c000-7f79fca7c000 ---p 00026000 08:05 661571                     /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f79fca7c000-7f79fca7d000 r--p 00026000 08:05 661571                     /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f79fca7d000-7f79fca7e000 rw-p 00027000 08:05 661571                     /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+7f79fca7e000-7f79fca7f000 rw-p 00000000 00:00 0 
+7f79fca7f000-7f79fcb43000 r-xp 00000000 08:05 661575                     /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f79fcb43000-7f79fcd42000 ---p 000c4000 08:05 661575                     /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f79fcd42000-7f79fcd4c000 r--p 000c3000 08:05 661575                     /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f79fcd4c000-7f79fcd4d000 rw-p 000cd000 08:05 661575                     /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+7f79fcd4d000-7f79fcde2000 r-xp 00000000 08:05 661512                     /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.913.0
+7f79fcde2000-7f79fcfe1000 ---p 00095000 08:05 661512                     /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.913.0
+7f79fcfe1000-7f79fcfe3000 r--p 00094000 08:05 661512                     /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.913.0
+7f79fcfe3000-7f79fcfe4000 rw-p 00096000 08:05 661512                     /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.913.0
+7f79fcfe4000-7f79fcfec000 r-xp 00000000 08:05 665852                     /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f79fcfec000-7f79fd1ec000 ---p 00008000 08:05 665852                     /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f79fd1ec000-7f79fd1ed000 r--p 00008000 08:05 665852                     /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f79fd1ed000-7f79fd1ee000 rw-p 00009000 08:05 665852                     /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f79fd1ee000-7f79fd1f0000 r-xp 00000000 08:05 665855                     /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f79fd1f0000-7f79fd3ef000 ---p 00002000 08:05 665855                     /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f79fd3ef000-7f79fd3f0000 r--p 00001000 08:05 665855                     /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f79fd3f0000-7f79fd3f1000 rw-p 00002000 08:05 665855                     /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f79fd3f1000-7f79fd416000 r-xp 00000000 08:05 658409                     /lib/x86_64-linux-gnu/libpng12.so.0.49.0
+7f79fd416000-7f79fd615000 ---p 00025000 08:05 658409                     /lib/x86_64-linux-gnu/libpng12.so.0.49.0
+7f79fd615000-7f79fd616000 r--p 00024000 08:05 658409                     /lib/x86_64-linux-gnu/libpng12.so.0.49.0
+7f79fd616000-7f79fd617000 rw-p 00025000 08:05 658409                     /lib/x86_64-linux-gnu/libpng12.so.0.49.0
+7f79fd617000-7f79fd6a7000 r-xp 00000000 08:05 661722                     /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.28.2
+7f79fd6a7000-7f79fd8a6000 ---p 00090000 08:05 661722                     /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.28.2
+7f79fd8a6000-7f79fd8ad000 r--p 0008f000 08:05 661722                     /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.28.2
+7f79fd8ad000-7f79fd8ae000 rw-p 00096000 08:05 661722                     /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.28.2
+7f79fd8ae000-7f79fd8b3000 r-xp 00000000 08:05 660957                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f79fd8b3000-7f79fdab2000 ---p 00005000 08:05 660957                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f79fdab2000-7f79fdab3000 r--p 00004000 08:05 660957                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f79fdab3000-7f79fdab4000 rw-p 00005000 08:05 660957                     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f79fdab4000-7f79fdab6000 r-xp 00000000 08:05 660946                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f79fdab6000-7f79fdcb6000 ---p 00002000 08:05 660946                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f79fdcb6000-7f79fdcb7000 r--p 00002000 08:05 660946                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f79fdcb7000-7f79fdcb8000 rw-p 00003000 08:05 660946                     /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f79fdcb8000-7f79fdcc7000 r-xp 00000000 08:05 661038                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f79fdcc7000-7f79fdec7000 ---p 0000f000 08:05 661038                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f79fdec7000-7f79fdec8000 r--p 0000f000 08:05 661038                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f79fdec8000-7f79fdec9000 rw-p 00010000 08:05 661038                     /usr/lib/x86_64-linux-gnu/libavahi-client.so.3.2.9
+7f79fdec9000-7f79fded4000 r-xp 00000000 08:05 661040                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f79fded4000-7f79fe0d3000 ---p 0000b000 08:05 661040                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f79fe0d3000-7f79fe0d4000 r--p 0000a000 08:05 661040                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f79fe0d4000-7f79fe0d5000 rw-p 0000b000 08:05 661040                     /usr/lib/x86_64-linux-gnu/libavahi-common.so.3.5.3
+7f79fe0d5000-7f79fe18a000 r-xp 00000000 08:05 665413                     /usr/lib/x86_64-linux-gnu/libgnutls.so.26.22.6
+7f79fe18a000-7f79fe389000 ---p 000b5000 08:05 665413                     /usr/lib/x86_64-linux-gnu/libgnutls.so.26.22.6
+7f79fe389000-7f79fe38f000 r--p 000b4000 08:05 665413                     /usr/lib/x86_64-linux-gnu/libgnutls.so.26.22.6
+7f79fe38f000-7f79fe390000 rw-p 000ba000 08:05 665413                     /usr/lib/x86_64-linux-gnu/libgnutls.so.26.22.6
+7f79fe390000-7f79fe391000 rw-p 00000000 00:00 0 
+7f79fe391000-7f79fe3cc000 r-xp 00000000 08:05 661402                     /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f79fe3cc000-7f79fe5cc000 ---p 0003b000 08:05 661402                     /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f79fe5cc000-7f79fe5cd000 r--p 0003b000 08:05 661402                     /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f79fe5cd000-7f79fe5cf000 rw-p 0003c000 08:05 661402                     /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+7f79fe5cf000-7f79fe5f5000 r-xp 00000000 08:05 658322                     /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f79fe5f5000-7f79fe7f5000 ---p 00026000 08:05 658322                     /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f79fe7f5000-7f79fe7f7000 r--p 00026000 08:05 658322                     /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f79fe7f7000-7f79fe7f8000 rw-p 00028000 08:05 658322                     /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+7f79fe7f8000-7f79fe88f000 r-xp 00000000 08:05 661293                     /usr/lib/x86_64-linux-gnu/libfreetype.so.6.10.0
+7f79fe88f000-7f79fea8e000 ---p 00097000 08:05 661293                     /usr/lib/x86_64-linux-gnu/libfreetype.so.6.10.0
+7f79fea8e000-7f79fea94000 r--p 00096000 08:05 661293                     /usr/lib/x86_64-linux-gnu/libfreetype.so.6.10.0
+7f79fea94000-7f79fea95000 rw-p 0009c000 08:05 661293                     /usr/lib/x86_64-linux-gnu/libfreetype.so.6.10.0
+7f79fea95000-7f79fea97000 r-xp 00000000 08:05 660955                     /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f79fea97000-7f79fec96000 ---p 00002000 08:05 660955                     /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f79fec96000-7f79fec97000 r--p 00001000 08:05 660955                     /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f79fec97000-7f79fec98000 rw-p 00002000 08:05 660955                     /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f79fec98000-7f79fec9a000 r-xp 00000000 08:05 660951                     /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f79fec9a000-7f79fee99000 ---p 00002000 08:05 660951                     /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f79fee99000-7f79fee9a000 r--p 00001000 08:05 660951                     /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f79fee9a000-7f79fee9b000 rw-p 00002000 08:05 660951                     /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f79fee9b000-7f79feea4000 r-xp 00000000 08:05 666116                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f79feea4000-7f79ff0a4000 ---p 00009000 08:05 666116                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f79ff0a4000-7f79ff0a5000 r--p 00009000 08:05 666116                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f79ff0a5000-7f79ff0a6000 rw-p 0000a000 08:05 666116                     /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f79ff0a6000-7f79ff0af000 r-xp 00000000 08:05 666122                     /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f79ff0af000-7f79ff2ae000 ---p 00009000 08:05 666122                     /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f79ff2ae000-7f79ff2af000 r--p 00008000 08:05 666122                     /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f79ff2af000-7f79ff2b0000 rw-p 00009000 08:05 666122                     /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f79ff2b0000-7f79ff2b2000 r-xp 00000000 08:05 666119                     /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f79ff2b2000-7f79ff4b1000 ---p 00002000 08:05 666119                     /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f79ff4b1000-7f79ff4b2000 r--p 00001000 08:05 666119                     /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f79ff4b2000-7f79ff4b3000 rw-p 00002000 08:05 666119                     /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f79ff4b3000-7f79ff4c6000 r-xp 00000000 08:05 661704                     /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3200.5
+7f79ff4c6000-7f79ff6c5000 ---p 00013000 08:05 661704                     /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3200.5
+7f79ff6c5000-7f79ff6c6000 r--p 00012000 08:05 661704                     /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3200.5
+7f79ff6c6000-7f79ff6c7000 rw-p 00013000 08:05 661704                     /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3200.5
+7f79ff6c7000-7f79ff7c5000 r-xp 00000000 08:05 661078                     /usr/lib/x86_64-linux-gnu/libcairo.so.2.11200.14
+7f79ff7c5000-7f79ff9c5000 ---p 000fe000 08:05 661078                     /usr/lib/x86_64-linux-gnu/libcairo.so.2.11200.14
+7f79ff9c5000-7f79ff9c8000 r--p 000fe000 08:05 661078                     /usr/lib/x86_64-linux-gnu/libcairo.so.2.11200.14
+7f79ff9c8000-7f79ff9c9000 rw-p 00101000 08:05 661078                     /usr/lib/x86_64-linux-gnu/libcairo.so.2.11200.14
+7f79ff9c9000-7f79ff9cb000 rw-p 00000000 00:00 0 
+7f79ff9cb000-7f79ff9eb000 r-xp 00000000 08:05 661028                     /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20809.1
+7f79ff9eb000-7f79ffbea000 ---p 00020000 08:05 661028                     /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20809.1
+7f79ffbea000-7f79ffbec000 r--p 0001f000 08:05 661028                     /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20809.1
+7f79ffbec000-7f79ffbed000 rw-p 00021000 08:05 661028                     /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20809.1
+7f79ffbed000-7f79ffbf2000 r-xp 00000000 08:05 663441                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f79ffbf2000-7f79ffdf1000 ---p 00005000 08:05 663441                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f79ffdf1000-7f79ffdf2000 r--p 00004000 08:05 663441                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f79ffdf2000-7f79ffdf3000 rw-p 00005000 08:05 663441                     /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f79ffdf3000-7f79ffdfe000 r-xp 00000000 08:05 661702                     /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3200.5
+7f79ffdfe000-7f79ffffe000 ---p 0000b000 08:05 661702                     /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3200.5
+7f79ffffe000-7f79fffff000 r--p 0000b000 08:05 661702                     /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3200.5
+7f79fffff000-7f7a00000000 rw-p 0000c000 08:05 661702                     /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3200.5
+7f7a00000000-7f7a00021000 rw-p 00000000 00:00 0 
+7f7a00021000-7f7a04000000 ---p 00000000 00:00 0 
+7f7a04000000-7f7a04021000 rw-p 00000000 00:00 0 
+7f7a04021000-7f7a08000000 ---p 00000000 00:00 0 
+7f7a08000000-7f7a08021000 rw-p 00000000 00:00 0 
+7f7a08021000-7f7a0c000000 ---p 00000000 00:00 0 
+7f7a0c000000-7f7a0c021000 rw-p 00000000 00:00 0 
+7f7a0c021000-7f7a10000000 ---p 00000000 00:00 0 
+7f7a10000000-7f7a10038000 rw-p 00000000 00:00 0 
+7f7a10038000-7f7a14000000 ---p 00000000 00:00 0 
+7f7a14000000-7f7a14021000 rw-p 00000000 00:00 0 
+7f7a14021000-7f7a18000000 ---p 00000000 00:00 0 
+7f7a18000000-7f7a18092000 rw-p 00000000 00:00 0 
+7f7a18092000-7f7a1c000000 ---p 00000000 00:00 0 
+7f7a1c000000-7f7a1c021000 rw-p 00000000 00:00 0 
+7f7a1c021000-7f7a20000000 ---p 00000000 00:00 0 
+7f7a2007a000-7f7a20097000 r-xp 00000000 08:05 665434                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f7a20097000-7f7a20296000 ---p 0001d000 08:05 665434                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f7a20296000-7f7a20297000 r--p 0001c000 08:05 665434                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f7a20297000-7f7a20298000 rw-p 0001d000 08:05 665434                     /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f7a20298000-7f7a202f2000 r-xp 00000000 08:05 661141                     /usr/lib/x86_64-linux-gnu/libcups.so.2
+7f7a202f2000-7f7a204f2000 ---p 0005a000 08:05 661141                     /usr/lib/x86_64-linux-gnu/libcups.so.2
+7f7a204f2000-7f7a204f7000 r--p 0005a000 08:05 661141                     /usr/lib/x86_64-linux-gnu/libcups.so.2
+7f7a204f7000-7f7a204f8000 rw-p 0005f000 08:05 661141                     /usr/lib/x86_64-linux-gnu/libcups.so.2
+7f7a204f8000-7f7a204f9000 r-xp 00000000 08:05 661492                     /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3600.0
+7f7a204f9000-7f7a206f8000 ---p 00001000 08:05 661492                     /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3600.0
+7f7a206f8000-7f7a206f9000 r--p 00000000 08:05 661492                     /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3600.0
+7f7a206f9000-7f7a206fa000 rw-p 00001000 08:05 661492                     /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3600.0
+7f7a206fa000-7f7a20731000 r-xp 00000000 08:05 661265                     /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.6.2
+7f7a20731000-7f7a20931000 ---p 00037000 08:05 661265                     /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.6.2
+7f7a20931000-7f7a20932000 r--p 00037000 08:05 661265                     /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.6.2
+7f7a20932000-7f7a20933000 rw-p 00038000 08:05 661265                     /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.6.2
+7f7a20933000-7f7a20934000 rw-p 00000000 00:00 0 
+7f7a20934000-7f7a2097c000 r-xp 00000000 08:05 661700                     /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3200.5
+7f7a2097c000-7f7a20b7c000 ---p 00048000 08:05 661700                     /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3200.5
+7f7a20b7c000-7f7a20b7e000 r--p 00048000 08:05 661700                     /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3200.5
+7f7a20b7e000-7f7a20b7f000 rw-p 0004a000 08:05 661700                     /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3200.5
+7f7a20b7f000-7f7a20b9d000 r-xp 00000000 08:05 661326                     /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.0
+7f7a20b9d000-7f7a20d9d000 ---p 0001e000 08:05 661326                     /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.0
+7f7a20d9d000-7f7a20d9e000 r--p 0001e000 08:05 661326                     /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.0
+7f7a20d9e000-7f7a20d9f000 rw-p 0001f000 08:05 661326                     /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.0
+7f7a20d9f000-7f7a20e4c000 r-xp 00000000 08:05 661324                     /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.17
+7f7a20e4c000-7f7a2104b000 ---p 000ad000 08:05 661324                     /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.17
+7f7a2104b000-7f7a2104f000 r--p 000ac000 08:05 661324                     /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.17
+7f7a2104f000-7f7a21051000 rw-p 000b0000 08:05 661324                     /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.17
+7f7a21051000-7f7a2147e000 r-xp 00000000 08:05 661496                     /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.17
+7f7a2147e000-7f7a2167d000 ---p 0042d000 08:05 661496                     /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.17
+7f7a2167d000-7f7a21684000 r--p 0042c000 08:05 661496                     /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.17
+7f7a21684000-7f7a21688000 rw-p 00433000 08:05 661496                     /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.17
+7f7a21688000-7f7a2168a000 rw-p 00000000 00:00 0 
+7f7a2168a000-7f7a21698000 r-xp 00000000 08:05 660877                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f7a21698000-7f7a21898000 ---p 0000e000 08:05 660877                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f7a21898000-7f7a21899000 r--p 0000e000 08:05 660877                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f7a21899000-7f7a2189a000 rw-p 0000f000 08:05 660877                     /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f7a2189a000-7f7a2189f000 r-xp 00000000 08:05 666612                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f7a2189f000-7f7a21a9e000 ---p 00005000 08:05 666612                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f7a21a9e000-7f7a21a9f000 r--p 00004000 08:05 666612                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f7a21a9f000-7f7a21aa0000 rw-p 00005000 08:05 666612                     /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f7a21aa0000-7f7a21aa9000 r-xp 00000000 08:05 660990                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f7a21aa9000-7f7a21ca8000 ---p 00009000 08:05 660990                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f7a21ca8000-7f7a21ca9000 r--p 00008000 08:05 660990                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f7a21ca9000-7f7a21caa000 rw-p 00009000 08:05 660990                     /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f7a21caa000-7f7a21dde000 r-xp 00000000 08:05 661985                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f7a21dde000-7f7a21fde000 ---p 00134000 08:05 661985                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f7a21fde000-7f7a21fdf000 r--p 00134000 08:05 661985                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f7a21fdf000-7f7a21fe4000 rw-p 00135000 08:05 661985                     /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f7a21fe4000-7f7a21ff5000 r-xp 00000000 08:05 665444                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f7a21ff5000-7f7a221f4000 ---p 00011000 08:05 665444                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f7a221f4000-7f7a221f5000 r--p 00010000 08:05 665444                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f7a221f5000-7f7a221f6000 rw-p 00011000 08:05 665444                     /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f7a221f6000-7f7a22248000 r-xp 00000000 08:05 918323                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/xawt/libmawt.so
+7f7a22248000-7f7a22448000 ---p 00052000 08:05 918323                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/xawt/libmawt.so
+7f7a22448000-7f7a22449000 r--p 00052000 08:05 918323                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/xawt/libmawt.so
+7f7a22449000-7f7a2244c000 rw-p 00053000 08:05 918323                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/xawt/libmawt.so
+7f7a2244c000-7f7a2244d000 rw-p 00000000 00:00 0 
+7f7a2244d000-7f7a224ee000 r-xp 00000000 08:05 918284                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libawt.so
+7f7a224ee000-7f7a226ed000 ---p 000a1000 08:05 918284                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libawt.so
+7f7a226ed000-7f7a226ee000 r--p 000a0000 08:05 918284                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libawt.so
+7f7a226ee000-7f7a226f9000 rw-p 000a1000 08:05 918284                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libawt.so
+7f7a226f9000-7f7a2271e000 rw-p 00000000 00:00 0 
+7f7a2271e000-7f7a22721000 ---p 00000000 00:00 0 
+7f7a22721000-7f7a2281f000 rw-p 00000000 00:00 0                          [stack:6432]
+7f7a2281f000-7f7a22822000 ---p 00000000 00:00 0 
+7f7a22822000-7f7a22920000 rw-p 00000000 00:00 0                          [stack:6430]
+7f7a22920000-7f7a22923000 ---p 00000000 00:00 0 
+7f7a22923000-7f7a22a21000 rw-p 00000000 00:00 0                          [stack:6429]
+7f7a22a21000-7f7a22a24000 ---p 00000000 00:00 0 
+7f7a22a24000-7f7a22b22000 rw-p 00000000 00:00 0                          [stack:6428]
+7f7a22b22000-7f7a22b25000 ---p 00000000 00:00 0 
+7f7a22b25000-7f7a22c23000 rw-p 00000000 00:00 0                          [stack:6426]
+7f7a22c23000-7f7a22c26000 ---p 00000000 00:00 0 
+7f7a22c26000-7f7a22d24000 rw-p 00000000 00:00 0                          [stack:6425]
+7f7a22d24000-7f7a22d27000 ---p 00000000 00:00 0 
+7f7a22d27000-7f7a22e25000 rw-p 00000000 00:00 0                          [stack:6422]
+7f7a22e25000-7f7a22e28000 ---p 00000000 00:00 0 
+7f7a22e28000-7f7a22f26000 rw-p 00000000 00:00 0                          [stack:6420]
+7f7a22f26000-7f7a22f63000 r-xp 00000000 08:05 658397                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f7a22f63000-7f7a23163000 ---p 0003d000 08:05 658397                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f7a23163000-7f7a23164000 r--p 0003d000 08:05 658397                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f7a23164000-7f7a23165000 rw-p 0003e000 08:05 658397                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f7a23165000-7f7a2316c000 r-xp 00000000 08:05 661233                     /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f7a2316c000-7f7a2336b000 ---p 00007000 08:05 661233                     /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f7a2336b000-7f7a2336c000 r--p 00006000 08:05 661233                     /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f7a2336c000-7f7a2336d000 rw-p 00007000 08:05 661233                     /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f7a2336d000-7f7a23383000 r-xp 00000000 08:05 658420                     /lib/x86_64-linux-gnu/libresolv-2.17.so
+7f7a23383000-7f7a23583000 ---p 00016000 08:05 658420                     /lib/x86_64-linux-gnu/libresolv-2.17.so
+7f7a23583000-7f7a23584000 r--p 00016000 08:05 658420                     /lib/x86_64-linux-gnu/libresolv-2.17.so
+7f7a23584000-7f7a23585000 rw-p 00017000 08:05 658420                     /lib/x86_64-linux-gnu/libresolv-2.17.so
+7f7a23585000-7f7a23587000 rw-p 00000000 00:00 0 
+7f7a23587000-7f7a235a4000 r-xp 00000000 08:05 658424                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f7a235a4000-7f7a237a3000 ---p 0001d000 08:05 658424                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f7a237a3000-7f7a237a4000 r--p 0001c000 08:05 658424                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f7a237a4000-7f7a237a5000 rw-p 0001d000 08:05 658424                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f7a237a5000-7f7a237a6000 rw-p 00000000 00:00 0 
+7f7a237a6000-7f7a237a9000 r-xp 00000000 08:05 661359                     /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3600.0
+7f7a237a9000-7f7a239a8000 ---p 00003000 08:05 661359                     /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3600.0
+7f7a239a8000-7f7a239a9000 r--p 00002000 08:05 661359                     /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3600.0
+7f7a239a9000-7f7a239aa000 rw-p 00003000 08:05 661359                     /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3600.0
+7f7a239aa000-7f7a23aa3000 r-xp 00000000 08:05 658331                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.3600.0
+7f7a23aa3000-7f7a23ca3000 ---p 000f9000 08:05 658331                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.3600.0
+7f7a23ca3000-7f7a23ca4000 r--p 000f9000 08:05 658331                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.3600.0
+7f7a23ca4000-7f7a23ca5000 rw-p 000fa000 08:05 658331                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.3600.0
+7f7a23ca5000-7f7a23ca6000 rw-p 00000000 00:00 0 
+7f7a23ca6000-7f7a23df9000 r-xp 00000000 08:05 661347                     /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3600.0
+7f7a23df9000-7f7a23ff8000 ---p 00153000 08:05 661347                     /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3600.0
+7f7a23ff8000-7f7a23ffc000 r--p 00152000 08:05 661347                     /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3600.0
+7f7a23ffc000-7f7a23ffe000 rw-p 00156000 08:05 661347                     /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3600.0
+7f7a23ffe000-7f7a24000000 rw-p 00000000 00:00 0 
+7f7a24000000-7f7a2449a000 rw-p 00000000 00:00 0 
+7f7a2449a000-7f7a28000000 ---p 00000000 00:00 0 
+7f7a28000000-7f7a28021000 rw-p 00000000 00:00 0 
+7f7a28021000-7f7a2c000000 ---p 00000000 00:00 0 
+7f7a2c000000-7f7a2c021000 rw-p 00000000 00:00 0 
+7f7a2c021000-7f7a30000000 ---p 00000000 00:00 0 
+7f7a30000000-7f7a30021000 rw-p 00000000 00:00 0 
+7f7a30021000-7f7a34000000 ---p 00000000 00:00 0 
+7f7a34000000-7f7a34021000 rw-p 00000000 00:00 0 
+7f7a34021000-7f7a38000000 ---p 00000000 00:00 0 
+7f7a38000000-7f7a38021000 rw-p 00000000 00:00 0 
+7f7a38021000-7f7a3c000000 ---p 00000000 00:00 0 
+7f7a3c000000-7f7a3c021000 rw-p 00000000 00:00 0 
+7f7a3c021000-7f7a40000000 ---p 00000000 00:00 0 
+7f7a40000000-7f7a40021000 rw-p 00000000 00:00 0 
+7f7a40021000-7f7a44000000 ---p 00000000 00:00 0 
+7f7a44000000-7f7a44024000 rw-p 00000000 00:00 0 
+7f7a44024000-7f7a48000000 ---p 00000000 00:00 0 
+7f7a48066000-7f7a48067000 rw-p 00000000 00:00 0 
+7f7a48067000-7f7a4806e000 r--s 00000000 08:05 662625                     /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f7a4806e000-7f7a4806f000 rwxp 00000000 00:00 0 
+7f7a4806f000-7f7a48074000 r--s 0004c000 08:05 789379                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/jsse.jar
+7f7a48074000-7f7a48076000 r--s 00007000 08:05 818134                     /home/jtfmumm/.m2/repository/org/swinglabs/swingx/swingx-common/1.6.3/swingx-common-1.6.3.jar
+7f7a48076000-7f7a48078000 r--s 00006000 08:05 30443                      /home/jtfmumm/.m2/repository/org/clojure/tools.reader/0.7.10/tools.reader-0.7.10.jar
+7f7a48078000-7f7a48079000 r--s 00001000 08:05 575451                     /home/jtfmumm/.m2/repository/overtone/libs.handlers/0.2.0/libs.handlers-0.2.0.jar
+7f7a48079000-7f7a4807c000 r--s 0000c000 08:05 25706                      /home/jtfmumm/.m2/repository/commons-fileupload/commons-fileupload/1.2.1/commons-fileupload-1.2.1.jar
+7f7a4807c000-7f7a48085000 r--s 000b0000 08:05 818143                     /home/jtfmumm/.m2/repository/org/fife/ui/rsyntaxtextarea/2.0.3/rsyntaxtextarea-2.0.3.jar
+7f7a48085000-7f7a4809c000 r--s 00113000 08:05 818131                     /home/jtfmumm/.m2/repository/org/swinglabs/swingx/swingx-core/1.6.3/swingx-core-1.6.3.jar
+7f7a4809c000-7f7a480ab000 r--s 0007c000 08:05 25711                      /home/jtfmumm/.m2/repository/joda-time/joda-time/2.0/joda-time-2.0.jar
+7f7a480ab000-7f7a480f8000 r-xp 00000000 08:05 661383                     /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3600.0
+7f7a480f8000-7f7a482f8000 ---p 0004d000 08:05 661383                     /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3600.0
+7f7a482f8000-7f7a482f9000 r--p 0004d000 08:05 661383                     /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3600.0
+7f7a482f9000-7f7a482fa000 rw-p 0004e000 08:05 661383                     /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3600.0
+7f7a482fa000-7f7a482fb000 r--s 00004000 08:05 575445                     /home/jtfmumm/.m2/repository/overtone/osc-clj/0.9.0/osc-clj-0.9.0.jar
+7f7a482fb000-7f7a482fd000 r--s 0000a000 08:05 1202077                    /home/jtfmumm/.m2/repository/org/json/json/20090211/json-20090211.jar
+7f7a482fd000-7f7a48302000 r--s 0003d000 08:05 575431                     /home/jtfmumm/.m2/repository/commons-net/commons-net/3.0.1/commons-net-3.0.1.jar
+7f7a48302000-7f7a48303000 r--s 00004000 08:05 916731                     /home/jtfmumm/.m2/repository/org/clojure/core.logic/0.6.5/core.logic-0.6.5.jar
+7f7a48303000-7f7a48304000 r--s 00005000 08:05 575446                     /home/jtfmumm/.m2/repository/clj-native/clj-native/0.9.3/clj-native-0.9.3.jar
+7f7a48304000-7f7a48307000 r--s 00008000 08:05 818137                     /home/jtfmumm/.m2/repository/org/swinglabs/swingx/swingx-plaf/1.6.3/swingx-plaf-1.6.3.jar
+7f7a48307000-7f7a48308000 r--s 00001000 08:05 25756                      /home/jtfmumm/.m2/repository/compojure/compojure/1.1.5/compojure-1.1.5.jar
+7f7a48308000-7f7a48309000 r--s 00002000 08:05 25766                      /home/jtfmumm/.m2/repository/hiccup/hiccup/1.0.4/hiccup-1.0.4.jar
+7f7a48309000-7f7a4830f000 r--s 00033000 08:05 25702                      /home/jtfmumm/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
+7f7a4830f000-7f7a48310000 r--s 00000000 08:05 25767                      /home/jtfmumm/.m2/repository/clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.jar
+7f7a48310000-7f7a4831d000 r--s 00109000 08:05 25697                      /home/jtfmumm/.m2/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar
+7f7a4831d000-7f7a48333000 r-xp 00000000 08:05 918305                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f7a48333000-7f7a48532000 ---p 00016000 08:05 918305                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f7a48532000-7f7a48533000 r--p 00015000 08:05 918305                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f7a48533000-7f7a48534000 rw-p 00016000 08:05 918305                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f7a48534000-7f7a48544000 r-xp 00000000 08:05 918306                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f7a48544000-7f7a48744000 ---p 00010000 08:05 918306                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f7a48744000-7f7a48745000 r--p 00010000 08:05 918306                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f7a48745000-7f7a48746000 rw-p 00011000 08:05 918306                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f7a48746000-7f7a4874f000 r--s 000bc000 08:05 789382                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/resources.jar
+7f7a4874f000-7f7a4878e000 r--s 0032d000 08:05 1063647                    /home/jtfmumm/.m2/repository/org/clojure/clojure/1.5.1/clojure-1.5.1.jar
+7f7a4878e000-7f7a4878f000 r--s 00021000 08:05 1068735                    /home/jtfmumm/.m2/repository/org/clojure/clojurescript/0.0-1978/clojurescript-0.0-1978.jar
+7f7a4878f000-7f7a48791000 r--s 00004000 08:05 25762                      /home/jtfmumm/.m2/repository/ring/ring-core/1.1.7/ring-core-1.1.7.jar
+7f7a48791000-7f7a487b4000 r--s 00414000 08:05 30429                      /home/jtfmumm/.m2/repository/org/clojure/google-closure-library/0.0-20130212-95c19e7f0f5f/google-closure-library-0.0-20130212-95c19e7f0f5f.jar
+7f7a487b4000-7f7a487e7000 r--s 00332000 08:05 1202113                    /home/jtfmumm/.m2/repository/com/google/javascript/closure-compiler/v20130603/closure-compiler-v20130603.jar
+7f7a487e7000-7f7a48810000 r--s 001ee000 08:05 1202114                    /home/jtfmumm/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar
+7f7a48810000-7f7a48811000 ---p 00000000 00:00 0 
+7f7a48811000-7f7a48911000 rw-p 00000000 00:00 0                          [stack:6386]
+7f7a48911000-7f7a48914000 ---p 00000000 00:00 0 
+7f7a48914000-7f7a48a12000 rw-p 00000000 00:00 0                          [stack:6385]
+7f7a48a12000-7f7a48a15000 ---p 00000000 00:00 0 
+7f7a48a15000-7f7a48b13000 rw-p 00000000 00:00 0                          [stack:6384]
+7f7a48b13000-7f7a48b16000 ---p 00000000 00:00 0 
+7f7a48b16000-7f7a48c14000 rw-p 00000000 00:00 0                          [stack:6383]
+7f7a48c14000-7f7a48c17000 ---p 00000000 00:00 0 
+7f7a48c17000-7f7a48d15000 rw-p 00000000 00:00 0                          [stack:6382]
+7f7a48d15000-7f7a48d18000 ---p 00000000 00:00 0 
+7f7a48d18000-7f7a48e16000 rw-p 00000000 00:00 0                          [stack:6381]
+7f7a48e16000-7f7a494f7000 r--p 00000000 08:05 789951                     /usr/lib/locale/locale-archive
+7f7a494f7000-7f7a494fa000 ---p 00000000 00:00 0 
+7f7a494fa000-7f7a495f8000 rw-p 00000000 00:00 0                          [stack:6380]
+7f7a495f8000-7f7a495fb000 ---p 00000000 00:00 0 
+7f7a495fb000-7f7a496f9000 rw-p 00000000 00:00 0                          [stack:6379]
+7f7a496f9000-7f7a496fa000 ---p 00000000 00:00 0 
+7f7a496fa000-7f7a4c000000 rw-p 00000000 00:00 0                          [stack:6378]
+7f7a4c000000-7f7a4c021000 rw-p 00000000 00:00 0 
+7f7a4c021000-7f7a50000000 ---p 00000000 00:00 0 
+7f7a50000000-7f7a50021000 rw-p 00000000 00:00 0 
+7f7a50021000-7f7a54000000 ---p 00000000 00:00 0 
+7f7a54000000-7f7a54021000 rw-p 00000000 00:00 0 
+7f7a54021000-7f7a58000000 ---p 00000000 00:00 0 
+7f7a58000000-7f7a58001000 r--s 00005000 08:05 916474                     /home/jtfmumm/.m2/repository/org/clojure/core.match/0.2.0-alpha11/core.match-0.2.0-alpha11.jar
+7f7a58001000-7f7a58002000 r--s 00000000 08:05 575459                     /home/jtfmumm/.m2/repository/j18n/j18n/1.0.1/j18n-1.0.1.jar
+7f7a58002000-7f7a58003000 r--s 00001000 08:05 25760                      /home/jtfmumm/.m2/repository/clj-time/clj-time/0.3.7/clj-time-0.3.7.jar
+7f7a58003000-7f7a58005000 r--s 00008000 08:05 25712                      /home/jtfmumm/.m2/repository/org/clojure/tools.nrepl/0.2.3/tools.nrepl-0.2.3.jar
+7f7a58005000-7f7a58009000 r--s 00b46000 08:05 575452                     /home/jtfmumm/.m2/repository/overtone/scsynth/3.5.7.0/scsynth-3.5.7.0.jar
+7f7a58009000-7f7a5800d000 r--s 0002f000 08:05 30096                      /home/jtfmumm/.m2/repository/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar
+7f7a5800d000-7f7a589e5000 rw-p 00000000 00:00 0 
+7f7a589e5000-7f7a58b92000 r--s 01cde000 08:05 918271                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar
+7f7a58b92000-7f7a59412000 rw-p 00000000 00:00 0 
+7f7a59412000-7f7a59413000 ---p 00000000 00:00 0 
+7f7a59413000-7f7a59513000 rw-p 00000000 00:00 0                          [stack:6374]
+7f7a59513000-7f7a59514000 ---p 00000000 00:00 0 
+7f7a59514000-7f7a59614000 rw-p 00000000 00:00 0                          [stack:6373]
+7f7a59614000-7f7a59615000 ---p 00000000 00:00 0 
+7f7a59615000-7f7a59735000 rw-p 00000000 00:00 0                          [stack:6372]
+7f7a59735000-7f7a59849000 rw-p 00000000 00:00 0 
+7f7a59849000-7f7a5986c000 rw-p 00000000 00:00 0 
+7f7a5986c000-7f7a5989c000 rw-p 00000000 00:00 0 
+7f7a5989c000-7f7a598bc000 rw-p 00000000 00:00 0 
+7f7a598bc000-7f7a599cf000 rw-p 00000000 00:00 0 
+7f7a599cf000-7f7a59a69000 rw-p 00000000 00:00 0 
+7f7a59a69000-7f7a59a85000 rw-p 00000000 00:00 0 
+7f7a59a85000-7f7a59bea000 rw-p 00000000 00:00 0 
+7f7a59bea000-7f7a5a29a000 rwxp 00000000 00:00 0 
+7f7a5a29a000-7f7a5fbea000 rw-p 00000000 00:00 0 
+7f7a5fbea000-7f7a5fbf2000 r-xp 00000000 08:05 918315                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f7a5fbf2000-7f7a5fdf1000 ---p 00008000 08:05 918315                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f7a5fdf1000-7f7a5fdf2000 r--p 00007000 08:05 918315                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f7a5fdf2000-7f7a5fdf3000 rw-p 00008000 08:05 918315                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f7a5fdf3000-7f7a5fdff000 r-xp 00000000 08:05 658375                     /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7f7a5fdff000-7f7a5fffe000 ---p 0000c000 08:05 658375                     /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7f7a5fffe000-7f7a5ffff000 r--p 0000b000 08:05 658375                     /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7f7a5ffff000-7f7a60000000 rw-p 0000c000 08:05 658375                     /lib/x86_64-linux-gnu/libnss_files-2.17.so
+7f7a60000000-7f7a60d63000 rw-p 00000000 00:00 0 
+7f7a60d63000-7f7a64000000 ---p 00000000 00:00 0 
+7f7a64000000-7f7a64001000 r--s 00001000 08:05 575450                     /home/jtfmumm/.m2/repository/overtone/midi-clj/0.5.0/midi-clj-0.5.0.jar
+7f7a64001000-7f7a64002000 r--s 00000000 08:05 575456                     /home/jtfmumm/.m2/repository/clj-glob/clj-glob/1.0.0/clj-glob-1.0.0.jar
+7f7a64002000-7f7a64004000 r--s 0000f000 08:05 30430                      /home/jtfmumm/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20130212-95c19e7f0f5f/google-closure-library-third-party-0.0-20130212-95c19e7f0f5f.jar
+7f7a64004000-7f7a64007000 r--s 00025000 08:05 25704                      /home/jtfmumm/.m2/repository/commons-io/commons-io/2.1/commons-io-2.1.jar
+7f7a64007000-7f7a64008000 r--s 00001000 08:05 25700                      /home/jtfmumm/.m2/repository/org/clojure/tools.macro/0.1.0/tools.macro-0.1.0.jar
+7f7a64008000-7f7a6400a000 r--s 0001d000 08:05 575458                     /home/jtfmumm/.m2/repository/seesaw/seesaw/1.4.2/seesaw-1.4.2.jar
+7f7a6400a000-7f7a64010000 r--s 00068000 08:05 1202075                    /home/jtfmumm/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar
+7f7a64010000-7f7a64012000 r--s 0001b000 08:05 1068154                    /home/jtfmumm/.m2/repository/com/jgoodies/forms/1.2.1/forms-1.2.1.jar
+7f7a64012000-7f7a64016000 r--s 00b6f000 08:05 575453                     /home/jtfmumm/.m2/repository/overtone/scsynth-extras/3.5.7.0/scsynth-extras-3.5.7.0.jar
+7f7a64016000-7f7a64018000 r--s 00008000 08:05 818132                     /home/jtfmumm/.m2/repository/org/swinglabs/swingx/swingx-autocomplete/1.6.3/swingx-autocomplete-1.6.3.jar
+7f7a64018000-7f7a64019000 ---p 00000000 00:00 0 
+7f7a64019000-7f7a64119000 rw-p 00000000 00:00 0                          [stack:6371]
+7f7a64119000-7f7a64124000 r-xp 00000000 08:05 658379                     /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7f7a64124000-7f7a64323000 ---p 0000b000 08:05 658379                     /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7f7a64323000-7f7a64324000 r--p 0000a000 08:05 658379                     /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7f7a64324000-7f7a64325000 rw-p 0000b000 08:05 658379                     /lib/x86_64-linux-gnu/libnss_nis-2.17.so
+7f7a64325000-7f7a6433c000 r-xp 00000000 08:05 658369                     /lib/x86_64-linux-gnu/libnsl-2.17.so
+7f7a6433c000-7f7a6453b000 ---p 00017000 08:05 658369                     /lib/x86_64-linux-gnu/libnsl-2.17.so
+7f7a6453b000-7f7a6453c000 r--p 00016000 08:05 658369                     /lib/x86_64-linux-gnu/libnsl-2.17.so
+7f7a6453c000-7f7a6453d000 rw-p 00017000 08:05 658369                     /lib/x86_64-linux-gnu/libnsl-2.17.so
+7f7a6453d000-7f7a6453f000 rw-p 00000000 00:00 0 
+7f7a6453f000-7f7a64547000 r-xp 00000000 08:05 658371                     /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7f7a64547000-7f7a64746000 ---p 00008000 08:05 658371                     /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7f7a64746000-7f7a64747000 r--p 00007000 08:05 658371                     /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7f7a64747000-7f7a64748000 rw-p 00008000 08:05 658371                     /lib/x86_64-linux-gnu/libnss_compat-2.17.so
+7f7a64748000-7f7a64773000 r-xp 00000000 08:05 918293                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f7a64773000-7f7a64972000 ---p 0002b000 08:05 918293                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f7a64972000-7f7a64973000 r--p 0002a000 08:05 918293                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f7a64973000-7f7a64975000 rw-p 0002b000 08:05 918293                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f7a64975000-7f7a64984000 r-xp 00000000 08:05 918314                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f7a64984000-7f7a64b83000 ---p 0000f000 08:05 918314                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f7a64b83000-7f7a64b85000 r--p 0000e000 08:05 918314                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f7a64b85000-7f7a64b86000 rw-p 00010000 08:05 918314                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f7a64b86000-7f7a64b8d000 r-xp 00000000 08:05 658422                     /lib/x86_64-linux-gnu/librt-2.17.so
+7f7a64b8d000-7f7a64d8c000 ---p 00007000 08:05 658422                     /lib/x86_64-linux-gnu/librt-2.17.so
+7f7a64d8c000-7f7a64d8d000 r--p 00006000 08:05 658422                     /lib/x86_64-linux-gnu/librt-2.17.so
+7f7a64d8d000-7f7a64d8e000 rw-p 00007000 08:05 658422                     /lib/x86_64-linux-gnu/librt-2.17.so
+7f7a64d8e000-7f7a64da2000 r-xp 00000000 08:05 658327                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f7a64da2000-7f7a64fa2000 ---p 00014000 08:05 658327                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f7a64fa2000-7f7a64fa3000 r--p 00014000 08:05 658327                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f7a64fa3000-7f7a64fa4000 rw-p 00015000 08:05 658327                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f7a64fa4000-7f7a650a7000 r-xp 00000000 08:05 658350                     /lib/x86_64-linux-gnu/libm-2.17.so
+7f7a650a7000-7f7a652a7000 ---p 00103000 08:05 658350                     /lib/x86_64-linux-gnu/libm-2.17.so
+7f7a652a7000-7f7a652a8000 r--p 00103000 08:05 658350                     /lib/x86_64-linux-gnu/libm-2.17.so
+7f7a652a8000-7f7a652a9000 rw-p 00104000 08:05 658350                     /lib/x86_64-linux-gnu/libm-2.17.so
+7f7a652a9000-7f7a6538e000 r-xp 00000000 08:05 661852                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.17
+7f7a6538e000-7f7a6558d000 ---p 000e5000 08:05 661852                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.17
+7f7a6558d000-7f7a65595000 r--p 000e4000 08:05 661852                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.17
+7f7a65595000-7f7a65597000 rw-p 000ec000 08:05 661852                     /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.17
+7f7a65597000-7f7a655ac000 rw-p 00000000 00:00 0 
+7f7a655ac000-7f7a65fa7000 r-xp 00000000 08:05 918322                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f7a65fa7000-7f7a661a6000 ---p 009fb000 08:05 918322                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f7a661a6000-7f7a66225000 r--p 009fa000 08:05 918322                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f7a66225000-7f7a66248000 rw-p 00a79000 08:05 918322                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f7a66248000-7f7a66273000 rw-p 00000000 00:00 0 
+7f7a66273000-7f7a66289000 r-xp 00000000 08:05 658455                     /lib/x86_64-linux-gnu/libz.so.1.2.7
+7f7a66289000-7f7a66488000 ---p 00016000 08:05 658455                     /lib/x86_64-linux-gnu/libz.so.1.2.7
+7f7a66488000-7f7a66489000 r--p 00015000 08:05 658455                     /lib/x86_64-linux-gnu/libz.so.1.2.7
+7f7a66489000-7f7a6648a000 rw-p 00016000 08:05 658455                     /lib/x86_64-linux-gnu/libz.so.1.2.7
+7f7a6648a000-7f7a664a2000 r-xp 00000000 08:05 658414                     /lib/x86_64-linux-gnu/libpthread-2.17.so
+7f7a664a2000-7f7a666a1000 ---p 00018000 08:05 658414                     /lib/x86_64-linux-gnu/libpthread-2.17.so
+7f7a666a1000-7f7a666a2000 r--p 00017000 08:05 658414                     /lib/x86_64-linux-gnu/libpthread-2.17.so
+7f7a666a2000-7f7a666a3000 rw-p 00018000 08:05 658414                     /lib/x86_64-linux-gnu/libpthread-2.17.so
+7f7a666a3000-7f7a666a7000 rw-p 00000000 00:00 0 
+7f7a666a7000-7f7a666aa000 r-xp 00000000 08:05 658317                     /lib/x86_64-linux-gnu/libdl-2.17.so
+7f7a666aa000-7f7a668a9000 ---p 00003000 08:05 658317                     /lib/x86_64-linux-gnu/libdl-2.17.so
+7f7a668a9000-7f7a668aa000 r--p 00002000 08:05 658317                     /lib/x86_64-linux-gnu/libdl-2.17.so
+7f7a668aa000-7f7a668ab000 rw-p 00003000 08:05 658317                     /lib/x86_64-linux-gnu/libdl-2.17.so
+7f7a668ab000-7f7a66a69000 r-xp 00000000 08:05 658302                     /lib/x86_64-linux-gnu/libc-2.17.so
+7f7a66a69000-7f7a66c68000 ---p 001be000 08:05 658302                     /lib/x86_64-linux-gnu/libc-2.17.so
+7f7a66c68000-7f7a66c6c000 r--p 001bd000 08:05 658302                     /lib/x86_64-linux-gnu/libc-2.17.so
+7f7a66c6c000-7f7a66c6e000 rw-p 001c1000 08:05 658302                     /lib/x86_64-linux-gnu/libc-2.17.so
+7f7a66c6e000-7f7a66c73000 rw-p 00000000 00:00 0 
+7f7a66c73000-7f7a66c80000 r-xp 00000000 08:05 918318                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f7a66c80000-7f7a66e7f000 ---p 0000d000 08:05 918318                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f7a66e7f000-7f7a66e80000 r--p 0000c000 08:05 918318                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f7a66e80000-7f7a66e81000 rw-p 0000d000 08:05 918318                     /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f7a66e81000-7f7a66ea4000 r-xp 00000000 08:05 658278                     /lib/x86_64-linux-gnu/ld-2.17.so
+7f7a66ea4000-7f7a66ea5000 r--s 00000000 08:05 25698                      /home/jtfmumm/.m2/repository/org/clojure/core.incubator/0.1.0/core.incubator-0.1.0.jar
+7f7a66ea5000-7f7a66ea6000 r--s 00001000 08:05 575443                     /home/jtfmumm/.m2/repository/overtone/at-at/1.1.1/at-at-1.1.1.jar
+7f7a66ea6000-7f7a66ea7000 r--s 00000000 08:05 25757                      /home/jtfmumm/.m2/repository/clout/clout/1.0.1/clout-1.0.1.jar
+7f7a66ea7000-7f7a66eab000 r--s 000f3000 08:05 30093                      /home/jtfmumm/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar
+7f7a66eab000-7f7a66eb0000 r--s 0005f000 08:05 575441                     /home/jtfmumm/.m2/repository/overtone/overtone/0.8.1/overtone-0.8.1.jar
+7f7a66eb0000-7f7a66eb1000 r--s 00001000 08:05 25761                      /home/jtfmumm/.m2/repository/jayq/jayq/2.4.0/jayq-2.4.0.jar
+7f7a66eb1000-7f7a66eb5000 r--s 0002e000 08:05 1068153                    /home/jtfmumm/.m2/repository/com/miglayout/miglayout/3.7.4/miglayout-3.7.4.jar
+7f7a66eb5000-7f7a66eb6000 r--s 00007000 08:05 818136                     /home/jtfmumm/.m2/repository/org/swinglabs/swingx/swingx-action/1.6.3/swingx-action-1.6.3.jar
+7f7a66eb6000-7f7a66eb7000 r--s 00001000 08:05 30094                      /home/jtfmumm/.m2/repository/org/clojure/data.json/0.1.2/data.json-0.1.2.jar
+7f7a66eb7000-7f7a66eb9000 r--s 00018000 08:05 25708                      /home/jtfmumm/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar
+7f7a66eb9000-7f7a66ebb000 r--s 00000000 08:05 575442                     /home/jtfmumm/.m2/repository/overtone/byte-spec/0.3.1/byte-spec-0.3.1.jar
+7f7a66ebb000-7f7a66f48000 rw-p 00000000 00:00 0 
+7f7a66f48000-7f7a66f78000 rw-p 00000000 00:00 0 
+7f7a66f78000-7f7a66f7b000 ---p 00000000 00:00 0 
+7f7a66f7b000-7f7a6707e000 rw-p 00000000 00:00 0                          [stack:6370]
+7f7a6707e000-7f7a67080000 r--s 0000c000 08:05 1202072                    /home/jtfmumm/.m2/repository/args4j/args4j/2.0.16/args4j-2.0.16.jar
+7f7a67080000-7f7a67082000 r--s 0000f000 08:05 818139                     /home/jtfmumm/.m2/repository/org/swinglabs/swingx/swingx-painters/1.6.3/swingx-painters-1.6.3.jar
+7f7a67082000-7f7a67085000 r--s 00006000 08:05 25688                      /home/jtfmumm/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar
+7f7a67085000-7f7a67088000 r--s 0003c000 08:05 918410                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunpkcs11.jar
+7f7a67088000-7f7a67089000 r--s 00002000 08:05 918406                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/dnsns.jar
+7f7a67089000-7f7a6708c000 r--s 00032000 08:05 918409                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunjce_provider.jar
+7f7a6708c000-7f7a6708f000 r--s 0000f000 08:05 918408                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/pulse-java.jar
+7f7a6708f000-7f7a67093000 r--s 00085000 08:05 918407                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/localedata.jar
+7f7a67093000-7f7a67095000 r--s 00006000 08:05 1190276                    /usr/share/java/java-atk-wrapper.jar
+7f7a67095000-7f7a67097000 r--s 00012000 08:05 918411                     /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/zipfs.jar
+7f7a67097000-7f7a6709f000 rw-s 00000000 08:05 1202117                    /tmp/hsperfdata_jtfmumm/6367
+7f7a6709f000-7f7a670a0000 rw-p 00000000 00:00 0 
+7f7a670a0000-7f7a670a1000 r--p 00000000 00:00 0 
+7f7a670a1000-7f7a670a3000 rw-p 00000000 00:00 0 
+7f7a670a3000-7f7a670a4000 r--p 00022000 08:05 658278                     /lib/x86_64-linux-gnu/ld-2.17.so
+7f7a670a4000-7f7a670a6000 rw-p 00023000 08:05 658278                     /lib/x86_64-linux-gnu/ld-2.17.so
+7fffc966c000-7fffc968e000 rw-p 00000000 00:00 0                          [stack]
+7fffc97fe000-7fffc9800000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Dclojure.compile.path=/home/jtfmumm/Dropbox/Programming/clojure/musitron/target/classes -Dmusitron.version=0.1.0-SNAPSHOT -Dfile.encoding=UTF-8 -Dclojure.debug=false -Djava.library.path=/home/jtfmumm/Dropbox/Programming/clojure/musitron/target/native/linux/x86_64 
+java_command: clojure.main -i /tmp/form-init8086225519766274272.clj
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=:/home/jtfmumm/.lein/self-installs/leiningen-2.3.2-standalone.jar
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+USERNAME=jtfmumm
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x857ed0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x857ed0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x6f8ab0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x6f8ab0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x6f8ab0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x6f8ab0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x6f8e80], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x6f8fc0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x6f8fc0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x6f8fc0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x6f8fc0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:LinuxMint 15 (olivia)
+uname:Linux 3.8.0-19-generic #29-Ubuntu SMP Wed Apr 17 18:16:28 UTC 2013 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 29224, NOFILE 4096, AS infinity
+load average:1.74 1.25 1.05
+
+/proc/meminfo:
+MemTotal:        3775200 kB
+MemFree:          121248 kB
+Buffers:            9304 kB
+Cached:           587808 kB
+SwapCached:        25128 kB
+Active:          2496196 kB
+Inactive:         991020 kB
+Active(anon):    2313584 kB
+Inactive(anon):   789216 kB
+Active(file):     182612 kB
+Inactive(file):   201804 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:       3915772 kB
+SwapFree:        3729988 kB
+Dirty:               688 kB
+Writeback:             0 kB
+AnonPages:       2869556 kB
+Mapped:           154500 kB
+Shmem:            212660 kB
+Slab:              80244 kB
+SReclaimable:      50432 kB
+SUnreclaim:        29812 kB
+KernelStack:        5104 kB
+PageTables:        34448 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5803372 kB
+Committed_AS:    7068400 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      545072 kB
+VmallocChunk:   34359190044 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       64320 kB
+DirectMap2M:     3852288 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i3 CPU       M 370  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1733.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4788.15
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i3 CPU       M 370  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1466.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4788.15
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i3 CPU       M 370  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 2399.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4788.15
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i3 CPU       M 370  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 933.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm arat dtherm tpr_shadow vnmi flexpriority ept vpid
+bogomips	: 4788.15
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3775200k(121248k free), swap 3915772k(3729988k free)
+
+vm_info: OpenJDK 64-Bit Server VM (23.7-b01) for linux-amd64 JRE (1.7.0_21-b02), built on Apr 22 2013 07:43:15 by "buildd" with gcc 4.7.3
+
+time: Mon Oct 28 14:58:07 2013
+elapsed time: 39 seconds
+
