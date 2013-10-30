@@ -9,32 +9,6 @@
 ;FOR EQUAL TEMPERAMENT
 (def bp-semitone (math/expt 3 1/13))
 
-
-;OSCILLATORS
-(definst sin-wave [freq 440 attack 0.1 sustain 0.4 release 5.1 vol 0.4] 
-  (* (env-gen (lin-env attack sustain release) 1 1 0 1 FREE)
-     (sin-osc freq)
-     vol))
-
-(defn square-wave [freq]
-  (let [attack 0.1 sustain 0.4 release 2.1 vol 0.4]
-  (loop [harmonics 6 k 1]
-      (if (> harmonics 0)
-          (if-not (= (mod k 2) 0)
-              (do
-                (sin-wave (* freq k) attack sustain release (* vol (/ 1 k)))
-                (recur (dec harmonics) (inc k)))
-              (recur (dec harmonics) (inc k)))))))
-
-(defn saw-wave [freq]
-  (let [attack 0.1 sustain 0.4 release 2.1 vol 0.4]
-  (loop [harmonics 6 k 1]
-      (if (> harmonics 0)
-          (do 
-              (sin-wave (* freq k) attack sustain release (* vol (/ 1 k)))
-              (recur (dec harmonics) (inc k)))))))
-
-
 ;;GENERATE ALL BOHLEN-PIERCE TONES
 (defn all-bp-tones []
   (lazy-seq
@@ -54,20 +28,24 @@
 ;Gamma family
 (def bp-dur-ii-scale [2 1 1 2 1 2 1 1 2])
 
+(def lambda-notes [0 2 3 4 6 7 9 10 12])
 
-(def markov-bp [[]
-                []
-                []
-                []
-                []
-                []
-                []
-                []
-                []
-                []
-                []
-                []
-                []])
+(def markov-bp [[1 6 5 5 3 2 2 3 1]
+                [1 1 6 5 5 3 2 2 3]
+                [3 1 1 6 5 5 3 2 2]
+                [2 3 1 1 6 5 5 3 2]
+                [2 2 3 1 1 6 5 5 3]
+                [3 2 2 3 1 1 6 5 5]
+                [5 3 2 2 3 1 1 6 5]
+                [5 5 3 2 2 3 1 1 6]
+                [6 5 5 3 2 2 3 1 1]])
+
+(defn markov-roll [current markov-matrix]
+    (loop [remaining (nth markov-matrix current) tally 0 column 0 roll (rand-int 28)]
+      (if-not (empty? remaining)
+          (if (<= roll (+ tally (first remaining)))
+              column
+              (recur (rest remaining) (+ tally (first remaining)) (inc column) roll)))))
 
 (defn bp-midi->hz [note]
   (nth (all-bp-tones) note))
@@ -77,9 +55,9 @@
 
 ;;Altered Overtone source code to integrate Bohlen-Pierce system 
 
-(def MIDI-NOTE-RE-STR-BP "([a-jA-J][#bB]?)([-0-9]+)" )
-(def MIDI-NOTE-RE-BP (re-pattern MIDI-NOTE-RE-STR-BP))
-(def ONLY-MIDI-NOTE-RE-BP (re-pattern (str "\\A" MIDI-NOTE-RE-STR-BP "\\Z")))
+;(def MIDI-NOTE-RE-STR-BP "([a-jA-J][#bB]?)([-0-9]+)" )
+;(def MIDI-NOTE-RE-BP (re-pattern MIDI-NOTE-RE-STR-BP))
+;(def ONLY-MIDI-NOTE-RE-BP (re-pattern (str "\\A" MIDI-NOTE-RE-STR-BP "\\Z")))
 
 (def BP-NOTES {:C 0 :c 0 :b# 0 :B# 0
             :C# 1 :c# 1 :Db 1 :db 1 :DB 1 :dB 1
