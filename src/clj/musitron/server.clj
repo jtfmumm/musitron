@@ -4,7 +4,8 @@
             [compojure.route :as route]
             [ring.util.response :as response])
   (:use [hiccup.core]
-           [compojure.core]))
+           [compojure.core]
+           [musitron.core]))
 
 (defn view-layout [& content]
   (html
@@ -28,3 +29,5 @@
       (route/resources "/"))
 
 (def app (handler/site main-routes))
+
+;(def -main [& args] ())
